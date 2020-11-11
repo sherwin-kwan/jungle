@@ -1,0 +1,45 @@
+.order-summary {
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4em;
+    margin: 10px;
+    color: green;
+
+    span.title {
+      font-weight: bold;
+      color: purple;
+    }
+  }
+  section {
+
+    border: 2px solid black;
+
+    summary {
+      float: right;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #222;
+    }
+
+    article {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      > aside {
+        width: 35%;
+
+        img {
+          max-width: 90%;
+          max-height: 300px;
+        }
+      }
+      > div {
+        width: 60%;
+      }
+    }
+  }
+} 
