@@ -17,3 +17,13 @@ body {
 form.button_to {
   display: inline;
 }
+
+// Table format
+table {
+  border-collapse: collapse;
+
+  td, th {
+    border: 2px solid black;
+    padding: 10px;
+  }
+}
