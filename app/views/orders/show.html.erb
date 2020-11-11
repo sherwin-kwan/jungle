@@ -2,10 +2,19 @@
 
   <header class="page-header">
     <h1>Order #<%= @order.id %></h1>
+    <h1><%= @order.inspect %>
+    <%# <%= @order.line_items.inspect %> 
+    <% @order.line_items.each do |item| %>
+      <%= item.quantity.to_s %>
+      <%= item.product.inspect %>
+    <% end %>
   </header>
 
   <div class="order-summary jumbotron">
-    <h4>Thank you for your order!</h4>
+    <header>
+
+    </header>
+    <h4>Congratulations! Your order will be arriving shortly: </h4>
   </div>
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
