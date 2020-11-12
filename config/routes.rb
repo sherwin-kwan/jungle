@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   resources :about, only: [:index]
   resources :users, only: [:new, :create]
 
+  get '/users/login' => 'sessions#new'
+  post '/users/login' => 'sessions#create'
+  get '/users/logout' => 'sessions#destroy'
+
   resource :cart, only: [:show] do
     post   :add_item
     post   :remove_item

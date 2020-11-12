@@ -2,11 +2,17 @@ class UsersController < ApplicationController
 
   def create
     raise User.inspect
-    @user = User.new(user_params)
+    user = User.new(user_params)
+    if user.save
+      session[:current_user] = user.id
+      redirect_to :root
+    else
+      redirect_to :new_user
+    end
   end
 
   def new
-    raise User.inspect
+    @user = User.new
   end
 
   def user_params
