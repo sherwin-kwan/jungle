@@ -29,4 +29,13 @@ class ApplicationController < ActionController::Base
     cookies[:cart]
   end
 
+  def current_user
+    @current_user ||= User.find(session[:current_user]) if session[:current_user]
+  end
+  helper_method :current_user
+
+  def authorize
+    redirect_to users_login_path unless current_user
+  end
+
 end
