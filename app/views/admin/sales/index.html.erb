@@ -1,0 +1,26 @@
+<main>
+  <h1> Welcome to the Sales Page </h1>
+
+
+  <div class="well">
+    <%= link_to '+ New sale', new_admin_sale_path, class: 'btn btn-info' %>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Sale Name</th>
+        <th>Percent off</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Status</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @sales.each do |sale| %>
+        <%= render 'sale', sale: sale %>
+      <% end %>
+    </tbody>
+  </table>
+</main>

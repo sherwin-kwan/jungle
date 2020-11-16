@@ -1,0 +1,19 @@
+
+<tr>
+  <td><%= sale[:name] %></td>
+  <td><%= sale[:percent_off] %></td>
+  <td><%= sale[:starts_on] %></td>
+  <td><%= sale[:ends_on] %></td>
+  <td>
+    <% if sale.over? %>
+      <span class="label label-danger">Over</span>
+    <% elsif sale.future? %>
+      <span class="label label-warning">Future</span>
+    <% else %>
+      <span class="label label-success">Active</span>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to fa_icon('trash'), admin_sale_path(sale), class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
+  </td>
+</tr>
