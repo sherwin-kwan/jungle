@@ -1,7 +1,10 @@
-# Jungle
+# Yonago
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A restaurant takeout application built with Rails 4.2. Lots of delicious food you can order online!
 
+It is forked from @lighthouse-labs/jungle as part of a curriculum to teach Ruby on Rails.
+
+The name Yonago is a tribute to Matz (Matsumoto Yukihiro), the developer who created the Ruby language in 1995, who was a native of Yonago on the western coast of Japan,
 
 ## Setup
 
