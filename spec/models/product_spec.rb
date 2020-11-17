@@ -2,6 +2,19 @@ require 'rails_helper'
 
 describe Product, type: :model do
 
+  # # METHOD 1
+  # category = Category.create(name: "Maki")
+  # my_product = category.products.create(name: "California Rolls", price: 10, desc ....)
+
+  # # METHOD 2
+  # category = Category.create(name: "Maki")
+  # my_product = Product.create(name: "California Rolls", price: 10, category_id: category.id, desc ....)
+
+  # # METHOD 3
+  # category = Category.create(name: "Maki")
+  # my_product = Product.create(name: "California Rolls", price: 10, category: category, desc ....)
+
+
   it 'should successfully save a new product if all required fields are there' do
     category = Category.create(name: "Maki")
     my_product = category.products.create(name: "California Rolls", price: 10, description: "Maki rolls with avocado and imitation crab", quantity: 30)
