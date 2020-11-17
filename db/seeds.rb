@@ -14,8 +14,8 @@ def open_asset(file_name)
 end
 
 # Only run on development (local) instances not on production, etc.
-unless Rails.env.development?
-  puts "Development seeds only (for now)!"
+unless Rails.env.development? || Rails.env.test?
+  puts "Seeds valid for development or test environments"
   exit 0
 end
 
@@ -92,46 +92,6 @@ cat5.products.create!({
   image: open_asset('07-green-tea.png'),
   quantity: 40,
   price: 2.99
-})
-
-cat2.products.create!({
-  name:  'Hotdog Slicer',
-  description: Faker::Hipster.paragraph(4),
-  image: open_asset('electronics2.jpg'),
-  quantity: 3,
-  price: 26.00
-})
-
-cat2.products.create!({
-  name:  'World\'s Largest Smartwatch',
-  description: Faker::Hipster.paragraph(4),
-  image: open_asset('electronics3.jpg'),
-  quantity: 32,
-  price: 2_026.29
-})
-
-cat3.products.create!({
-  name:  'Optimal Sleeping Bed',
-  description: Faker::Hipster.paragraph(4),
-  image: open_asset('furniture1.jpg'),
-  quantity: 320,
-  price: 3_052.00
-})
-
-cat3.products.create!({
-  name:  'Electric Chair',
-  description: Faker::Hipster.paragraph(4),
-  image: open_asset('furniture2.jpg'),
-  quantity: 2,
-  price: 987.65
-})
-
-cat3.products.create!({
-  name:  'Red Bookshelf',
-  description: Faker::Hipster.paragraph(4),
-  image: open_asset('furniture3.jpg'),
-  quantity: 23,
-  price: 2_483.75
 })
 
 
