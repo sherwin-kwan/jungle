@@ -33,15 +33,14 @@ describe User, type: :model do
     end
     it 'should fail if an email already exists in a different case' do
       user = User.create(fname: 'Abe', lname: 'Lincoln', email: 'abc@abc.com', password: 'abcdefg')
-      user2 = User.create(fname: 'Beth', lname: 'Marner', email: 'ABC@abc.com', password: 'abcdefg')
+      user2 = User.new(fname: 'Beth', lname: 'Marner', email: 'ABC@abc.com', password: 'abcdefg')
+      puts "Email is: #{user2.email}"
+      puts "After adjusting it's: #{user2.email.strip.downcase}"
+      user2.save
       expect(user2.persisted?).to be(false)
     end
     it 'should fail if email is not entered in the right format' do
-      user = User.create(fname: 'Abe', lname: 'Lincoln', email: 'this.is.an.email@notreally', password: 'abcdefg')
-      expect(user.persisted?).to be(false)
-    end
-    it 'should fail if email is not entered in the right format (2)' do
-      user = User.create(fname: 'Abe', lname: 'Lincoln', email: 'hahahathisis.totally.an.email', password: 'abcdefg')
+      user = User.create(fname: 'Abe', lname: 'Lincoln', email: 'this.is.an.email.notreally', password: 'abcdefg')
       expect(user.persisted?).to be(false)
     end
   end
@@ -63,9 +62,32 @@ describe User, type: :model do
       user = User.create(fname: 'Abe', lname: 'Lincoln', email: 'abc@abc.com', password: 'abcd', password_confirmation: 'abcd')
       expect(user.persisted?).to be(false)
     end
+    it 'should pass if password is 5 or more characters' do
+      user = User.create(fname: 'Abe', lname: 'Lincoln', email: 'abc@abc.com', password: 'abcd', password_confirmation: 'abcde')
+      expect(user.persisted?).to be(false)
+    end
   end
 
-  describe 'Logging in' do
-    pending
+  describe 'Logging in authenticate_with_email method' do
+    it 'should log in if a valid username/password combination is entered' do
+      user = User.create(fname: 'Abe', lname: 'Lincoln', email: 'abc@abc.com', password: 'abcdefg')
+      expect(User.authenticate_with_email('abc@abc.com', 'abcdefg')).to be_truthy
+    end
+    it 'email should not be case sensitive' do
+      user = User.create(fname: 'Abe', lname: 'Lincoln', email: 'abc@abc.com', password: 'abcdefg')
+      expect(User.authenticate_with_email('ABC@abc.com', 'abcdefg')).to be_truthy
+    end
+    it 'email should strip whitespace' do
+      user = User.create(fname: 'Abe', lname: 'Lincoln', email: 'abc@abc.com', password: 'abcdefg')
+      expect(User.authenticate_with_email(' abc@abc.com  ', 'abcdefg')).to be_truthy
+    end
+    it 'password should be case sensitive' do
+      user = User.create(fname: 'Abe', lname: 'Lincoln', email: 'abc@abc.com', password: 'Abcdefg')
+      expect(User.authenticate_with_email(' abc@abc.com  ', 'abcdefg')).to be_nil
+    end
+    it 'password should not strip extra spaces' do
+      user = User.create(fname: 'Abe', lname: 'Lincoln', email: 'abc@abc.com', password: ' abcdefg')
+      expect(User.authenticate_with_email(' abc@abc.com  ', 'abcdefg')).to be_nil
+    end
   end
 end
