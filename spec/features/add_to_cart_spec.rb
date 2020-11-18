@@ -22,7 +22,7 @@ RSpec.feature "AddToCarts", type: :feature, js: true do
 
     click_on "Register"
 
-    expect(page).to have_content("Sign Out") # Shows successfully logged in, then sign out and sign in again
+    expect(page).to have_content("Sign Out") 
     expect(page).to have_text('My Order (0)')
 
     first_item = find("article.product", match: :first)
