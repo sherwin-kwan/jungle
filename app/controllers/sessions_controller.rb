@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       redirect_to :root
     else
     # If user's login doesn't work, send them back to the login form.
-      redirect_to :users_login
+      redirect_to :users_login, flash: {original_email: params[:email], error: "Username and password do not match"}
     end
   end
 
