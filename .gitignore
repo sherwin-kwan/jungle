@@ -58,3 +58,6 @@ bower.json
 
 # Node stuff
 node_modules
+
+# Test files
+testing.rb
