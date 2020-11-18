@@ -6,6 +6,7 @@
 
   <% if enhanced_cart.length > 0 %>
     <div class="panel panel-default items">
+      <p>You will be notified when your order is ready at: <%= @email %></p>
       <table class="table table-bordered">
         <thead>
           <tr>
@@ -39,10 +40,10 @@
             src="https://checkout.stripe.com/checkout.js" class="stripe-button"
             data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
             data-amount="<%= cart_subtotal_cents %>"
-            data-name="Jungle"
-            data-description="Khurram Virani's Jungle Order"
+            data-name="Yonago"
+            data-description="Takeout Order from Yonago"
             data-locale="auto"
-            data-email="kvirani@gmail.com"
+            data-email=<%= @email %>
             data-currency="cad">
           </script>
         <% end %>
@@ -50,7 +51,7 @@
     </div>
   <% else %>
     <div class="error">
-      There are no items in your cart.
+      There are no items in your order. Start by <%= link_to 'browsing our menu', root_path %>
     </div>
   <% end %>
 

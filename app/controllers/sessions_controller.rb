@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
 
   def create
-    # Call the authenticate_by_email function to check if this email/password pair is valid
-    user = User.authenticate_by_email(params[:email], params[:password])
+    # Call the authenticate_with_email function to check if this email/password pair is valid
+    user = User.authenticate_with_email(params[:email], params[:password])
     if user
       # Save the user id inside the browser cookie. This is how we keep the user 
       # logged in when they navigate around our website.
@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       redirect_to :root
     else
     # If user's login doesn't work, send them back to the login form.
-      redirect_to :users_login
+      redirect_to :users_login, flash: {original_email: params[:email], error: "Username and password do not match"}
     end
   end
 

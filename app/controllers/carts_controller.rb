@@ -3,6 +3,7 @@ class CartsController < ApplicationController
   before_filter :authorize
 
   def show
+    @email = @current_user.email
   end
 
   def add_item
