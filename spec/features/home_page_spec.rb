@@ -3,8 +3,7 @@ require "rails_helper"
 RSpec.feature "Visitor navigates to home page", type: :feature, js: true do
 
   # SETUP
-  before :each do
-    @category = Category.create! name: "Apparel"
+  before :all do
     load "#{Rails.root}/db/seeds.rb"
   end
 
