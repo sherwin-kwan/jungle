@@ -90,7 +90,7 @@ cat5.products.create!({
   name:  'Green Tea Ice Cream',
   description: 'A great way to unwind after stuffing yourself!',
   image: open_asset('07-green-tea.png'),
-  quantity: 40,
+  quantity: 0,
   price: 2.99
 })
 

@@ -16,5 +16,7 @@ RSpec.feature "Visitor navigates to home page", type: :feature, js: true do
 
     # VERIFY
     expect(page).to have_css "article.product", count: 7
+    ice_cream = find("article.product").contains("Ice Cream")
+    expect(ice_cream).to have_content("Sold Out")
   end
 end
