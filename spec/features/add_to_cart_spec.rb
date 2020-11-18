@@ -23,10 +23,19 @@ RSpec.feature "AddToCarts", type: :feature, js: true do
     click_on "Register"
 
     expect(page).to have_content("Sign Out") 
+
+    # Check for SOLD OUT items
+    ice_cream = find("article.product", text: "Ice Cream")
+    expect(ice_cream).to have_content("SOLD OUT")
+    # Make sure add to cart button is disabled when the item is sold out
+    expect(ice_cream).to have_button('Add', disabled: true)
+
+    takoyaki = find("article.product", text: "Takoyaki")
+    expect(takoyaki).to have_button('Add', disabled: false)
+
     expect(page).to have_text('My Order (0)')
 
-    first_item = find("article.product", match: :first)
-    within(first_item) {click_on "Add"}
+    within(takoyaki) {click_on "Add"}
 
     save_screenshot
     expect(page).to have_text('My Order (1)')
