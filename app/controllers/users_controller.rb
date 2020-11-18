@@ -1,13 +1,13 @@
 class UsersController < ApplicationController
 
   def create
-    user = User.new(user_params)
+    @user = User.new(user_params)
 
-    if user.save
-      session[:current_user] = user.id
+    if @user.save
+      session[:current_user] = @user.id
       redirect_to :root
     else
-      redirect_to :new_user
+      redirect_to :new_user, flash: {original_fname: @user.fname, original_lname: @user.lname, errors: @user.errors.full_messages}
     end
   end
 

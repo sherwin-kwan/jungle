@@ -10,8 +10,19 @@ RSpec.feature "AddToCarts", type: :feature, js: true do
   scenario 'should be able to add items to cart' do
     visit root_path
 
-    puts page.html
+    click_on "Sign In"
 
+    click_on "Don't have an account?"
+
+    fill_in "First Name", with: "Samuel"
+    fill_in "Last Name", with: "Jackson"
+    fill_in "Email", with: "samuelljackson@lighthouselabs.ca"
+    fill_in "user_password", with: "hunter2"
+    fill_in "user_password_confirmation", with: "hunter2"
+
+    click_on "Register"
+
+    expect(page).to have_content("Sign Out") # Shows successfully logged in, then sign out and sign in again
     expect(page).to have_text('My Order (0)')
 
     first_item = find("article.product", match: :first)
