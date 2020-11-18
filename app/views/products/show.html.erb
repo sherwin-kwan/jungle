@@ -26,6 +26,10 @@
       </div>
     </div>
 
+    <% if (@product.quantity > 0) %>
+      <%= button_to "Add to Order", add_item_cart_path(product_id: @product.id), class: 'btn btn-primary' , method: :post %>
+    <% end %>
+
   </article>
 
 </section>

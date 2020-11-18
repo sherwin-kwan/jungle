@@ -64,8 +64,6 @@ RSpec.feature "Admins", type: :feature, js: true do
     expect(page).to have_content("Qty Remaining")
     miso_ramen_row = find('tr', text: "Miso Ramen")
     expect(miso_ramen_row).to have_content("10.99")
-
-
   end
 
 end
