@@ -2,11 +2,6 @@ require "rails_helper"
 
 RSpec.feature "User signup/login process", type: :feature, js: true do
 
-  # SETUP SEEDS
-  before :all do
-    load "#{Rails.root}/db/seeds.rb"
-  end
-
   scenario 'check that user accounts can be created and subsequent login is possible' do
     visit root_path
 
