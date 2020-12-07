@@ -28,10 +28,10 @@ The name Yonago is a tribute to Matz (Matsumoto Yukihiro), the developer who cre
 
 ## Setup
 
-* Ensure you have the correct version of Ruby (2.3.x) and Rails (4.2) installed, and that you have access to a Postgres database. If you have a more recent version, you may use rvm to install the older version alongside your current Ruby:
+* Ensure you have the correct version of Ruby (2.7.0) and Rails (4.2) installed, and that you have access to a Postgres database. If you have a different version, you may use rvm to install 2.7 alongside your current Ruby:
 ```bash
-rvm install 2.3.5
-rvm use 2.3.5
+rvm install 2.7.0
+rvm use 2.7.0
 ```
 * Run `bundle install` to install dependencies (If this doesn't work, you may need to run `gem install bundler` first to get Bundler onto your system)
 * Create `config/database.yml` by copying `config/database.example.yml` and entering the correct credentials for your Postgres database
