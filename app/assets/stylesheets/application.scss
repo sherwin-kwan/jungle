@@ -34,13 +34,9 @@ nav.navbar {
 }
 
 nav#topnav.navbar.navbar-default {
-  color: #ff8;
+  color: #ffb;
 
-  a {
-    color: inherit;
-  }
-
-  .navbar-brand {
+  a, .navbar-brand, .text-danger {
     color: inherit;
   }
 }
