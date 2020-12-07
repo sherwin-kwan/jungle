@@ -1,6 +1,6 @@
 # Yonago
 
-A restaurant takeout application built with Rails 4.2. Lots of delicious food you can order online!
+A restaurant takeout application built with Rails. Lots of delicious food you can order online!
 
 It is forked from @lighthouse-labs/jungle as part of a curriculum to teach Ruby on Rails.
 
@@ -10,7 +10,7 @@ The name Yonago is a tribute to Matz (Matsumoto Yukihiro), the developer who cre
 
 ## Stack
 
-* Ruby on Rails
+* Ruby on Rails 
 * SCSS
 * PostgreSQL
 
@@ -20,8 +20,8 @@ The name Yonago is a tribute to Matz (Matsumoto Yukihiro), the developer who cre
 
 ## Dependencies
 
-* Ruby 2.3.x
-* Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
+* Ruby 2.7.0
+* Rails 6.0.3.4
 * Bundler
 * PostgreSQL 9.x or higher
 * Stripe
