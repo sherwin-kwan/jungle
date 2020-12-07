@@ -1,6 +1,6 @@
 # Yonago
 
-A restaurant takeout application built with Rails 4.2. Lots of delicious food you can order online!
+A restaurant takeout application built with Rails. Lots of delicious food you can order online!
 
 It is forked from @lighthouse-labs/jungle as part of a curriculum to teach Ruby on Rails.
 
@@ -10,7 +10,7 @@ The name Yonago is a tribute to Matz (Matsumoto Yukihiro), the developer who cre
 
 ## Stack
 
-* Ruby on Rails
+* Ruby on Rails 
 * SCSS
 * PostgreSQL
 
@@ -20,18 +20,18 @@ The name Yonago is a tribute to Matz (Matsumoto Yukihiro), the developer who cre
 
 ## Dependencies
 
-* Ruby 2.3.x
-* Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
+* Ruby 2.7.0
+* Rails 6.0.3.4
 * Bundler
 * PostgreSQL 9.x or higher
 * Stripe
 
 ## Setup
 
-* Ensure you have the correct version of Ruby (2.3.x) and Rails (4.2) installed, and that you have access to a Postgres database. If you have a more recent version, you may use rvm to install the older version alongside your current Ruby:
+* Ensure you have the correct version of Ruby (2.7.0) and Rails (4.2) installed, and that you have access to a Postgres database. If you have a different version, you may use rvm to install 2.7 alongside your current Ruby:
 ```bash
-rvm install 2.3.5
-rvm use 2.3.5
+rvm install 2.7.0
+rvm use 2.7.0
 ```
 * Run `bundle install` to install dependencies (If this doesn't work, you may need to run `gem install bundler` first to get Bundler onto your system)
 * Create `config/database.yml` by copying `config/database.example.yml` and entering the correct credentials for your Postgres database
