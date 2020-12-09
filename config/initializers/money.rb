@@ -1,4 +1,7 @@
 
+Money.locale_backend = :currency
+Money.default_currency = Money::Currency.new("CAD")
+
 MoneyRails.configure do |config|
 
   config.no_cents_if_whole = false
