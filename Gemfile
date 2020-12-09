@@ -26,15 +26,15 @@ gem 'sdoc', '~> 2.0.2', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.16'
 
-gem 'puma'
+gem 'puma' # Multithreading server, used for development and test environments
 
-gem 'bootstrap-sass', '~> 3.4.1'
-gem 'font-awesome-rails'
-gem 'money-rails'
-gem 'carrierwave'
-gem 'rmagick'
-gem 'stripe'
-gem 'faker'
+gem 'bootstrap-sass', '~> 3.4.1' # CSS library
+gem 'normalize-scss', '~> 7.0.1' # CSS library
+gem 'font-awesome-rails' # CSS library
+gem 'money-rails' # Currencies
+gem 'carrierwave' # Image upload functionality
+gem 'rmagick' # links Ruby to ImageMagick, an image processing library used here for image uploads
+gem 'stripe' # Payment provider integration
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -43,7 +43,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'dotenv-rails'
-  gem 'rspec-rails', '~> 4.0'
+  gem 'rspec-rails', '~> 4.0' # Allows for natural language (describe, it, etc.) syntax for tests
 end
 
 
