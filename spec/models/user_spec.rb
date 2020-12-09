@@ -2,21 +2,21 @@ require 'rails_helper'
 
 describe User, type: :model do
   it 'should successfully save a new user if all required fields are present' do
-    user = User.create(fname: 'Abe', lname: 'Lincoln', email: 'abc@abc.com', password: 'abcdefg')
+    user = User.create(name: 'Abraham Lincoln', given_name: 'Abe', email: 'abc@abc.com', password: 'abcdefg')
     expect(user.persisted?).to be(true)
   end
 
   describe 'Fields missing when registering' do
-    it 'should fail to create if first name is missing' do
-      user = User.create(fname: nil, lname: 'Lincoln', email: 'abc@abc.com', password: 'abcdefg')
+    it 'should fail to create if name is missing' do
+      user = User.create(name: nil, given_name: 'Abe', email: 'abc@abc.com', password: 'abcdefg')
       expect(user.persisted?).to be(false)
     end
-    it 'should fail to create if last name is missing' do
-      user = User.create(fname: 'Abe', lname: nil, email: 'abc@abc.com', password: 'abcdefg')
+    it 'should work if given name is missing' do
+      user = User.create(name: 'Abe', given_name: nil, email: 'abc@abc.com', password: 'abcdefg')
       expect(user.persisted?).to be(false)
     end
     it 'should fail to create if email is missing' do
-      user = User.create(fname: 'Abe', lname: 'Lincoln', email: nil, password: 'abcdefg')
+      user = User.create(name: 'Abe', given_name: 'Lincoln', email: nil, password: 'abcdefg')
       expect(user.persisted?).to be(false)
     end
     it 'should fail to create if password is missing' do
