@@ -1,0 +1,22 @@
+{
+  "application.js": "/packs/js/application-59fca85e2cf01bbd0c1f.js",
+  "application.js.map": "/packs/js/application-59fca85e2cf01bbd0c1f.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-59fca85e2cf01bbd0c1f.js"
+      ],
+      "js.map": [
+        "/packs/js/application-59fca85e2cf01bbd0c1f.js.map"
+      ]
+    }
+  },
+  "media/images/01-california-roll.jpg": "/packs/media/images/01-california-roll-4ba16b36159bbd174ac492813f5b166b.jpg",
+  "media/images/02-red-dragon-roll.jpg": "/packs/media/images/02-red-dragon-roll-28ecfdf305a8084e29d20f01d0f5f0e0.jpg",
+  "media/images/03-ebi.jpeg": "/packs/media/images/03-ebi-c5ba521a2eb58ab57790f6410f093969.jpeg",
+  "media/images/04-tai.jpg": "/packs/media/images/04-tai-4e1fd7a7259292c37e905052d9c0f12d.jpg",
+  "media/images/05-salmon-sashimi.jpg": "/packs/media/images/05-salmon-sashimi-a00a3248e12badb05465a21c9faa898e.jpg",
+  "media/images/06-takoyaki.jpg": "/packs/media/images/06-takoyaki-942b1e239832109618ead6b1896e8c11.jpg",
+  "media/images/07-green-tea.png": "/packs/media/images/07-green-tea-225d7da5c2b7ce39eeca4d8578467a99.png",
+  "media/images/sushi-bar.jpg": "/packs/media/images/sushi-bar-2be11ba0341fdb2fa8922d43ab1ced5c.jpg"
+}
