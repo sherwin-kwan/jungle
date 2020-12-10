@@ -1,5 +1,8 @@
 {
   "devDependencies": {
-    "phantomjs-prebuilt": "^2.1.16"
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "@rails/webpacker": "5.2.1"
   }
 }
