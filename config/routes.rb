@@ -7,9 +7,15 @@ Rails.application.routes.draw do
   resources :about, only: [:index]
   resources :users, only: [:new, :create]
 
-  get '/users/login' => 'sessions#new'
-  post '/users/login' => 'sessions#create'
-  get '/users/logout' => 'sessions#destroy'
+  get '/users/login' => 'sessions#new', as: :login
+  post '/users/login' => 'sessions#create', as: :login_submit
+  get '/users/logout' => 'sessions#destroy', as: :logout
+
+  resource :users do
+    collection do
+      post 'create_guest'
+    end
+  end
 
   resource :cart, only: [:show] do
     post   :add_item

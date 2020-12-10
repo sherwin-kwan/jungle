@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.is_guest = false
 
     if @user.save
       session[:current_user] = @user.id
@@ -11,6 +12,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def create_guest
+    @user = User.new({
+      email: user_params.email
+      is_guest: true
+    })
+
+    if @user.save
+      session[:current_user] = @user.id
+    else
+      raise 'Guest user could not be created'
+    end
+  end
 
   def new
     @user = User.new
