@@ -46,18 +46,14 @@ group :development, :test do
   gem 'rspec-rails', '~> 4.0' # Allows for natural language (describe, it, etc.) syntax for tests
 end
 
-
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console'
+  gem 'web-console' # Access an IRB console on exception pages or by using <%= console %> in views
 
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  gem 'spring' # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 end
 
 group :production do
-  gem 'newrelic_rpm'
-  gem 'rails_12factor'
+  gem 'newrelic_rpm' # Used for reporting on the health of the deployed webapp
 end
 
 group :test do

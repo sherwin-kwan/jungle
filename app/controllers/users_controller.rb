@@ -7,7 +7,7 @@ class UsersController < ApplicationController
       session[:current_user] = @user.id
       redirect_to :root
     else
-      redirect_to :new_user, flash: {original_fname: @user.fname, original_lname: @user.lname, errors: @user.errors.full_messages}
+      redirect_to :new_user, flash: {original_name: @user.name, original_given_name: @user.given_name, errors: @user.errors.full_messages}
     end
   end
 
