@@ -10,7 +10,10 @@ puts "Seeding Data ..."
 
 # Helper functions
 def open_asset(file_name)
-  File.open(Rails.root.join('db', 'seed_assets', file_name))
+  File.open(Rails.root.join('db', 'seed_assets', file_name)) 
+  # Note: These seed images are stored in a different place from the static assets. When the DB is seeded, a copy of these is made to 
+  # /public/uploads/... by CarrierWave (to "simulate" the uploading of these images). Then, they are compiled separately by Webpacker
+  # into the "protected" folder.
 end
 
 # Only run on development (local) instances not on production, etc.

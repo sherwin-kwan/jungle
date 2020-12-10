@@ -2,7 +2,7 @@
   <header>
     <%= link_to product do %>
       <%# raise product.image.url %>
-      <%= image_pack_tag product.image.url, alt: product.name %>
+      <%= image_pack_tag "media#{product.image.url}", alt: product.name %>
       <h4><%= product.name %></h4>
     <% end %>
   </header>

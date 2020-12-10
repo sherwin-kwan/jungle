@@ -10,10 +10,14 @@ class ProductImageUploader < CarrierWave::Uploader::Base
   storage :file
   # storage :fog
 
+  CarrierWave.configure do |config|
+    config.root = Rails.root.join('app','javascript') # Place images into the app/javascript folder so webpacker can find them
+  end
+
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    "images/uploads/#{model.class.to_s.underscore}/#{mounted_as}"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
