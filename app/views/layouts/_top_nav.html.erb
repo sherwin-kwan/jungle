@@ -45,11 +45,11 @@
         </li>
         <% if current_user %>
           <li>
-            <%= link_to "Sign Out", :users_logout %>
+            <%= link_to "Sign Out", :logout %>
           </li>
         <% else %>
           <li>
-            <%= link_to "Sign In", :users_login %>
+            <%= link_to "Sign In", :login %>
           </li>
           <li>
             <%= link_to "Sign Up", :new_user %>

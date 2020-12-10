@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   def create_guest
     @user = User.new({
-      email: user_params.email
+      email: user_params.email,
       is_guest: true
     })
 

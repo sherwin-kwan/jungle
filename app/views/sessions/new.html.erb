@@ -3,7 +3,7 @@
 <div class="well">
   <%= link_to 'Don\'t have an account? Sign Up', new_user_path, class: 'btn btn-info' %>
 </div>
-<%= form_tag users_login_path do %>
+<%= form_tag login_submit_path do %>
 
   <div class="form-group">
     <%= label_tag :email, "Email" %>
