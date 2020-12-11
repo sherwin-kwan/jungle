@@ -1,7 +1,16 @@
 // Vendor
-@import "~bootstrap/scss/bootstrap.scss";
+// @import '~normalize-css/normalize.css';
+
+/*
+  *= require bootstrap
+  *= require_tree .
+  *= require_self
+*/
+
+
 $fa-font-path: "~font-awesome/fonts/";
 @import "~font-awesome/scss/font-awesome.scss";
+@import "~bootstrap/scss/bootstrap.scss";
 
 // App
 @import "products";
@@ -10,7 +19,6 @@ $fa-font-path: "~font-awesome/fonts/";
 
 // Global
 body {
-  padding-top: 70px;
   background-color: #ffb;
 }
 
