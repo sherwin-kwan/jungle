@@ -2,13 +2,13 @@
 <html>
 <head>
   <title>Yonago</title>
-  <%= stylesheet_pack_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_pack_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_pack_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_pack_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-  <%= render 'layouts/top_nav' %>
+  <%= render "layouts/top_nav" %>
   <% if Sale.active_sales.length > 0 %>
     <p class="well">
       SALE ONGOING!!!

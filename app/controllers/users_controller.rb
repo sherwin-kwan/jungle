@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def create
     @user = User.new(user_params)
     @user.is_guest = false
@@ -8,20 +7,20 @@ class UsersController < ApplicationController
       session[:current_user] = @user.id
       redirect_to :root
     else
-      redirect_to :new_user, flash: {original_name: @user.name, original_given_name: @user.given_name, errors: @user.errors.full_messages}
+      redirect_to :new_user, flash: { original_name: @user.name, original_given_name: @user.given_name, errors: @user.errors.full_messages }
     end
   end
 
   def create_guest
     @user = User.new({
       email: user_params.email,
-      is_guest: true
+      is_guest: true,
     })
 
     if @user.save
       session[:current_user] = @user.id
     else
-      raise 'Guest user could not be created'
+      raise "Guest user could not be created"
     end
   end
 

@@ -1,8 +1,7 @@
 require "rails_helper"
 
 RSpec.feature "User signup/login process", type: :feature, js: true do
-
-  scenario 'check that user accounts can be created and subsequent login is possible' do
+  scenario "check that user accounts can be created and subsequent login is possible" do
     visit root_path
 
     click_on "Sign In"
@@ -29,10 +28,9 @@ RSpec.feature "User signup/login process", type: :feature, js: true do
     click_on "Submit"
 
     expect(page).to have_content("Sign Out")
-
   end
 
-  scenario 'check error messages appear if passwords do not match' do
+  scenario "check error messages appear if passwords do not match" do
     visit root_path
 
     click_on "Sign In"
@@ -50,7 +48,4 @@ RSpec.feature "User signup/login process", type: :feature, js: true do
     expect(page).to have_content("doesn't match")
     expect(page).to have_selector("input[value='Jackson']") # name should persist after an invalid signup attempt
   end
-
-
-
 end

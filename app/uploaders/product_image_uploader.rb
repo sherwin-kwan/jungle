@@ -11,7 +11,7 @@ class ProductImageUploader < CarrierWave::Uploader::Base
   # storage :fog
 
   CarrierWave.configure do |config|
-    config.root = Rails.root.join('app','javascript') # Place images into the app/javascript folder so webpacker can find them
+    config.root = Rails.root.join("app", "javascript") # Place images into the app/javascript folder so webpacker can find them
   end
 
   # Override the directory where uploaded files will be stored.

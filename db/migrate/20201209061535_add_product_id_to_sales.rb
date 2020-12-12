@@ -3,4 +3,3 @@ class AddProductIdToSales < ActiveRecord::Migration[6.0]
     add_reference :sales, :product, foreign_key: true
   end
 end
-
