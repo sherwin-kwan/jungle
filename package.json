@@ -1,4 +1,8 @@
 {
+  "name": "yonago",
+  "version": "0.1",
+  "homepage": "https://github.com/sherwin-kwan/yonago",
+  "license": "GPL-3.0-or-later",
   "devDependencies": {
     "webpack-dev-server": "^3.11.0"
   },
