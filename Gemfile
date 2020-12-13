@@ -51,6 +51,9 @@ end
 group :development do
   gem "web-console" # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'pry-rails' # Allows for Pry breakpoints
+  gem 'rubocop' # linting
+  gem 'rubocop-rails', require: false # Rails-specific linting
+  gem 'rubocop-rspec', require: false # Rspec-specific linting
   gem "spring" # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 end
 

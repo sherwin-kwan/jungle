@@ -10,7 +10,8 @@
 
 $fa-font-path: "~font-awesome/fonts/";
 @import "~font-awesome/scss/font-awesome.scss";
-@import "~bootstrap/scss/bootstrap.scss";
+// @import "~bootstrap/scss/bootstrap.scss";
+@import '~normalize-css/normalize.css';
 
 // App
 @import "products";

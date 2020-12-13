@@ -1,4 +1,4 @@
-class Sale < ActiveRecord::Base
+class Sale < ApplicationRecord
   def over?
     return ends_on < Date.current
   end

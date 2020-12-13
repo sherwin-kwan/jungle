@@ -10,6 +10,6 @@ class Admin::DashboardController < Admin::BaseController
       FROM line_items 
       JOIN products ON line_items.product_id = products.id
       GROUP BY products.id"
-    @products_table_array = ActiveRecord::Base.connection.execute(products_table_query)
+    @products_table_array = ApplicationRecord.connection.execute(products_table_query)
   end
 end
