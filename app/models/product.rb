@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Product < ApplicationRecord
   # NOTE: The money-rails gem automatically interprets a column name called "price_cents" to mean "store a price in cents"
   # So it will automatically multiply a price entered in the params by 100 and save it here

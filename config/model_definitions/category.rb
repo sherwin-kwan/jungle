@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Category
   #   @!attribute [rw] id
   #     @return [Integer]

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Sale
   #   @!attribute [rw] id
   #     @return [Integer]

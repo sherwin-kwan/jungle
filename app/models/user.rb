@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "uri"
 
 class User < ApplicationRecord
@@ -13,7 +15,7 @@ class User < ApplicationRecord
 
   def self.authenticate_with_email(email, password)
     user = User.find_by(email: email.strip.downcase)
-    return user if user && user.authenticate(password)
+    return user if user&.authenticate(password)
   end
 
   # Prevent emails from being case-sensitive by only storing lowercase, stripped versions

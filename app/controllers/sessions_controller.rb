@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SessionsController < ApplicationController
   def create
     # Call the authenticate_with_email function to check if this email/password pair is valid

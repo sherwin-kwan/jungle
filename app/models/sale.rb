@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Sale < ApplicationRecord
   def over?
     ends_on < Date.current

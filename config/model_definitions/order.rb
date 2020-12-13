@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Order
   #   @!attribute [rw] id
   #     @return [Integer]

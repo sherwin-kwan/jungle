@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "rails_helper"
 
 describe Product, type: :model do
@@ -26,32 +28,32 @@ describe Product, type: :model do
 
     it "fails to save if the name is missing" do
       category = Category.create(name: "Maki")
-      product = Product.create(name: nil, price: 10, description: "Maki rolls with avocado and imitation crab", quantity: 30,
-                               category: category)
+      product = described_class.create(name: nil, price: 10, description: "Maki rolls with avocado and imitation crab", quantity: 30,
+                                       category: category)
       expect(product.persisted?).to be(false)
       expect(product.errors.full_messages[0]).to be_truthy
     end
 
     it "fails to save if the price is missing" do
       category = Category.create(name: "Maki")
-      product = Product.create(name: "California Rolls", price: nil, description: "Maki rolls with avocado and imitation crab", quantity: 30,
-                               category: category)
+      product = described_class.create(name: "California Rolls", price: nil, description: "Maki rolls with avocado and imitation crab", quantity: 30,
+                                       category: category)
       expect(product.persisted?).to be(false)
       expect(product.errors.full_messages[0]).to be_truthy
     end
 
     it "fails to save if the quantity is missing" do
       category = Category.create(name: "Maki")
-      product = Product.create(name: "California Rolls", price: 10, description: "Maki rolls with avocado and imitation crab", quantity: nil,
-                               category: category)
+      product = described_class.create(name: "California Rolls", price: 10, description: "Maki rolls with avocado and imitation crab", quantity: nil,
+                                       category: category)
       expect(product.persisted?).to be(false)
       expect(product.errors.full_messages[0]).to be_truthy
     end
 
     it "fails to save if the category is missing" do
       category = Category.create(name: "Maki")
-      product = Product.create(name: "California Rolls", price: 10,
-                               description: "Maki rolls with avocado and imitation crab", quantity: 30)
+      product = described_class.create(name: "California Rolls", price: 10,
+                                       description: "Maki rolls with avocado and imitation crab", quantity: 30)
       expect(product.persisted?).to be(false)
       expect(product.errors.full_messages[0]).to be_truthy
     end

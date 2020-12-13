@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class LineItem
   #   @!attribute [rw] id
   #     @return [Integer]
