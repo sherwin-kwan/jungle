@@ -31,10 +31,10 @@ gem "bcrypt", "~> 3.1.16"
 gem "puma" # Multithreading server, used for development and test environments
 
 gem "bootstrap-sass", "~> 3.4.1" # CSS library
-gem "normalize-scss", "~> 7.0.1" # CSS library
+gem "carrierwave" # Image upload functionality
 gem "font-awesome-rails" # CSS library
 gem "money-rails" # Currencies
-gem "carrierwave" # Image upload functionality
+gem "normalize-scss", "~> 7.0.1" # CSS library
 gem "rmagick" # links Ruby to ImageMagick, an image processing library used here for image uploads
 gem "stripe" # Payment provider integration
 
@@ -49,12 +49,12 @@ group :development, :test do
 end
 
 group :development do
-  gem "web-console" # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'pry-rails' # Allows for Pry breakpoints
-  gem 'rubocop' # linting
-  gem 'rubocop-rails', require: false # Rails-specific linting
-  gem 'rubocop-rspec', require: false # Rspec-specific linting
+  gem "pry-rails" # Allows for Pry breakpoints
+  gem "rubocop" # linting
+  gem "rubocop-rails", require: false # Rails-specific linting
+  gem "rubocop-rspec", require: false # Rspec-specific linting
   gem "spring" # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem "web-console" # Access an IRB console on exception pages or by using <%= console %> in views
 end
 
 group :production do
@@ -63,7 +63,7 @@ end
 
 group :test do
   gem "capybara"
+  gem "database_cleaner"
   gem "selenium-webdriver"
   gem "webdrivers"
-  gem "database_cleaner"
 end

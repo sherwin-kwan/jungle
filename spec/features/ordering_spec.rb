@@ -1,9 +1,8 @@
 require "rails_helper"
 
-RSpec.feature "Ordering", type: :feature, js: true do
-
+RSpec.describe "Ordering", type: :feature, js: true do
   # Set up seeds and create a user account
-  before :each do
+  before do
     load "#{Rails.root}/db/seeds.rb"
     visit root_path
     click_on "Sign In"
@@ -17,8 +16,7 @@ RSpec.feature "Ordering", type: :feature, js: true do
     click_on "Register"
   end
 
-  scenario "should not be able to add sold-out items to cart" do
-
+  it "is not able to add sold-out items to cart" do
     # Make sure user logged in successfully
     expect(page).to have_content("Sign Out")
 
@@ -29,13 +27,13 @@ RSpec.feature "Ordering", type: :feature, js: true do
     expect(ice_cream).to have_button("Add", disabled: true)
   end
 
-  scenario "should be able to add items to cart, and go to orders" do
+  it "is able to add items to cart, and go to orders" do
     takoyaki = find("article.product", text: "Takoyaki")
     expect(takoyaki).to have_button("Add", disabled: false)
 
     expect(page).to have_text("My Order (0)")
 
-    (0...10).each do
+    10.times do
       within(takoyaki) { click_on "Add" }
     end
     expect(page).to have_text("My Order (1)")

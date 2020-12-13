@@ -1,4 +1,4 @@
-require 'fileutils'
+require "fileutils"
 
 namespace :solargraph do
   task update_model_definitions: :environment do
@@ -7,10 +7,10 @@ namespace :solargraph do
       Zeitwerk::Loader.eager_load_all if defined?(Zeitwerk)
 
       ApplicationRecord.descendants.each do |model|
-        def_file = Rails.root.join('config', 'model_definitions', "#{model.name.underscore}.rb")
+        def_file = Rails.root.join("config", "model_definitions", "#{model.name.underscore}.rb")
         FileUtils.mkdir_p File.dirname(def_file)
 
-        File.open(def_file, 'w') do |file|
+        File.open(def_file, "w") do |file|
           file << "class #{model.name}\n"
           klass = model.name.constantize
           klass.attribute_names.each do |name|
@@ -26,15 +26,15 @@ end
 
 def ruby_type
   {
-    array:       'Array',
-    boolean:     'Boolean',
-    date:        'Date',
-    datetime:    'DateTime',
-    decimal:     'Decimal',
-    float:       'Float',
-    integer:     'Integer',
-    string:      'String',
-    text:        'String',
-    time:        'Time',
+    array: "Array",
+    boolean: "Boolean",
+    date: "Date",
+    datetime: "DateTime",
+    decimal: "Decimal",
+    float: "Float",
+    integer: "Integer",
+    string: "String",
+    text: "String",
+    time: "Time"
   }
 end

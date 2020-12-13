@@ -1,7 +1,6 @@
 require "rails_helper"
 
-RSpec.feature "Carts and orders", type: :feature, js: true do
-
+RSpec.describe "Carts and orders", type: :feature, js: true do
   # SETUP
   before :all do
     load "#{Rails.root}/db/seeds.rb"
@@ -19,8 +18,7 @@ RSpec.feature "Carts and orders", type: :feature, js: true do
     click_on "Register"
   end
 
-  scenario "no order table if cart is empty" do
-
+  it "no order table if cart is empty" do
     # Log in first
     visit root_path
     click_on "Sign In"

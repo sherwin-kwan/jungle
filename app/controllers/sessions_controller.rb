@@ -19,6 +19,5 @@ class SessionsController < ApplicationController
     redirect_to :root
   end
 
-  def new
-  end
+  def new; end
 end

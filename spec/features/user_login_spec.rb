@@ -1,7 +1,7 @@
 require "rails_helper"
 
-RSpec.feature "User signup/login process", type: :feature, js: true do
-  scenario "check that user accounts can be created and subsequent login is possible" do
+RSpec.describe "User signup/login process", type: :feature, js: true do
+  it "check that user accounts can be created and subsequent login is possible" do
     visit root_path
 
     click_on "Sign In"
@@ -30,7 +30,7 @@ RSpec.feature "User signup/login process", type: :feature, js: true do
     expect(page).to have_content("Sign Out")
   end
 
-  scenario "check error messages appear if passwords do not match" do
+  it "check error messages appear if passwords do not match" do
     visit root_path
 
     click_on "Sign In"

@@ -1,14 +1,14 @@
 class Sale < ApplicationRecord
   def over?
-    return ends_on < Date.current
+    ends_on < Date.current
   end
 
   def future?
-    return starts_on > Date.current
+    starts_on > Date.current
   end
 
   def active?
-    return starts_on < Date.current && self.ends_on > Date.current
+    starts_on < Date.current && ends_on > Date.current
   end
 
   # Class methods
