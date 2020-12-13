@@ -3,4 +3,4 @@ require:
   - rubocop-rspec
 
 Style/StringLiterals:
-  EnforcedStyle: "double_quotes"
+  EnforcedStyle: double_quotes
