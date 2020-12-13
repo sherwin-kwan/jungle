@@ -2,7 +2,7 @@ source "https://rubygems.org"
 ruby "2.7.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem "rails", "6.0.3.4"
+gem "rails", "6.1"
 # Use postgresql as the database for Active Record
 gem "pg"
 # Use webpacker for building the front end
@@ -50,7 +50,7 @@ end
 
 group :development do
   gem "web-console" # Access an IRB console on exception pages or by using <%= console %> in views
-
+  gem 'pry-rails' # Allows for Pry breakpoints
   gem "spring" # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 end
 
