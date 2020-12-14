@@ -1,25 +1,37 @@
 // Vendor
-// @import '~normalize-css/normalize.css';
 
-/*
-  *= require bootstrap
-  *= require_tree .
-  *= require_self
-*/
-
-$fa-font-path: '~@fortawesome/fontawesome-free/webfonts'; 
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+// Vendor CSS
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
 // @import "~bootstrap/scss/bootstrap.scss";
-@import '~normalize-css/normalize.css';
+@import "normalize"; // Couldn't get this to load from node-modules, so it was copied over
 
 // App
 @import "products";
 @import "orders";
 @import "dashboard";
 
+// Variables
+@import "variables";
+
 // Global
 body {
-  background-color: #ffb;
+  background-color: $brand-yellow;
+}
+
+// Top Nav
+nav {
+  display: flex;
+  background-color: $brand-blue;
+  color: $brand-yellow;
+  opacity: 0.5;
+  justify-content: space-around;
+  align-items: center;
+
+  > a {
+    margin: 1rem;
+    color: inherit;
+  }
 }
 
 // Bootstrap adjustments
@@ -31,7 +43,8 @@ form.button_to {
 table {
   border-collapse: collapse;
 
-  td, th {
+  td,
+  th {
     border: 2px solid black;
     padding: 10px;
   }
@@ -44,7 +57,9 @@ nav.navbar {
 nav#topnav.navbar.navbar-default {
   color: #ffb;
 
-  a, .navbar-brand, .text-danger {
+  a,
+  .navbar-brand,
+  .text-danger {
     color: inherit;
   }
 }

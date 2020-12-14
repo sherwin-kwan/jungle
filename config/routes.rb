@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :categories, only: [:show]
   resources :about, only: [:index]
   resources :users, only: %i[new create]
+  resources :orders, only: %i[create show]
+
 
   get "/users/login" => "sessions#new", as: :login
   post "/users/login" => "sessions#create", as: :login_submit
@@ -18,12 +20,11 @@ Rails.application.routes.draw do
     end
   end
 
+  # To be deprecated and replaced with a state handler on the front end
   resource :cart, only: [:show] do
     post :add_item
     post :remove_item
   end
-
-  resources :orders, only: %i[create show]
 
   namespace :admin do
     root to: "dashboard#show"
@@ -31,6 +32,13 @@ Rails.application.routes.draw do
     resources :categories, except: %i[edit update show]
     resources :sales, only: %i[index new destroy]
     resources :users, only: %i[index destroy]
+    resources :orders, only: %i[index show]
+
+    resource :orders do
+      member do
+        post 'change_status' # An update route that only allows for status to be changed
+      end
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

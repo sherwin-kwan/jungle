@@ -1,3 +1,10 @@
+<nav>
+  <%= link_to "Home", :root %>
+  <%= link_to "Menu", root_path(anchor: "menu") %>
+  <%= link_to "About Us", :about_index %>
+  <%= link_to "My Orders", orders_path %>
+</nav>
+<!-- 
 <nav class="navbar navbar-default navbar-fixed-top" id="topnav">
   <div class="container">
     <div class="navbar-header">
@@ -24,7 +31,7 @@
           </a>
           <ul class="dropdown-menu">
             <% Category.all.each do |category| %>
-              <li><%= link_to category.name, category %></li>
+              <li><% link_to category.name, category %></li>
             <% end %>
           </ul>
         </li>
@@ -63,4 +70,4 @@
       </ul>
     </div>
   </div>
-</nav>
+</nav> -->
