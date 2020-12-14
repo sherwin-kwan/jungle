@@ -1,11 +1,3 @@
-// Vendor
-
-// Vendor CSS
-$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
-@import "~@fortawesome/fontawesome-free/scss/fontawesome";
-// @import "~bootstrap/scss/bootstrap.scss";
-@import "normalize"; // Couldn't get this to load from node-modules, so it was copied over
-
 // App
 @import "products";
 @import "orders";
@@ -13,6 +5,11 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
 
 // Variables
 @import "variables";
+
+// Vendor CSS
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+// @import "~bootstrap/scss/bootstrap.scss";
+@import "normalize"; // Couldn't get this to load from node-modules, so it was copied over
 
 // Global
 body {
@@ -27,8 +24,8 @@ nav {
   top: 0px;
   width: 100%;
   background-color: $brand-blue;
-  color: $brand-yellow;
-  opacity: 0.5;
+  color: white;
+  opacity: 0.7;
   justify-content: space-around;
   align-items: center;
 
@@ -39,6 +36,21 @@ nav {
   > a {
     margin: 1rem;
     color: inherit;
+  }
+}
+
+// Background image
+div.title-image {
+  width: 100%;
+  height: 80vh;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  > * {
+    color: white;
   }
 }
 

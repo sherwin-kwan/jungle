@@ -1,11 +1,20 @@
 <section class="products-index">
 
+
+  <div class="title-image" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url(<%= asset_pack_path('media/images/sushi-bar.jpg') %>)">
+    <h1>YONAGO</h1>
+    <h3>A gem of a Japanese eatery!</h3>
+  </div>
+
   <header class="page-header">
     <h1>Menu</h1>
   </header>
-
   <div class="products">
     <%= render @products %>
   </div>
 
 </section>
+
+<% content_for :end_of_body do %>
+  <p>This is the end of body!</p>
+<% end %>

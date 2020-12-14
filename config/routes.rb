@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create]
   resources :orders, only: %i[create show]
 
-
   get "/users/login" => "sessions#new", as: :login
   post "/users/login" => "sessions#create", as: :login_submit
   get "/users/logout" => "sessions#destroy", as: :logout
@@ -36,7 +35,7 @@ Rails.application.routes.draw do
 
     resource :orders do
       member do
-        post 'change_status' # An update route that only allows for status to be changed
+        post "change_status" # An update route that only allows for status to be changed
       end
     end
   end
