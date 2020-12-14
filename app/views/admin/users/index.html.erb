@@ -4,7 +4,7 @@
 
 
   <div class="well">
-    <%= link_to 'Register New User', new_user_path, class: 'btn btn-info' %>
+    <%= link_to "Register New User", new_user_path, class: "btn btn-info" %>
   </div>
 
   <table>
@@ -19,11 +19,11 @@
     <tbody>
       <% @users.each do |user| %>
         <tr>
-          <td><%= user[:fname] %></td>
-          <td><%= user[:lname] %></td>
+          <td><%= user[:name] %></td>
+          <td><%= user[:given_name] %></td>
           <td><%= user[:email] %></td>
           <td>
-            <%= link_to fa_icon('trash'), [:admin, user], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure you want to delete this user?" } %>
+            <%= link_to fa_icon("trash"), [:admin, user], class: "btn btn-sm btn-danger", method: :delete, data: { confirm: "Are you sure you want to delete this user?" } %>
           </td>
         </tr>
       <% end %>

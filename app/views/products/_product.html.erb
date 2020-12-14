@@ -1,7 +1,7 @@
 <article class="product">
   <header>
     <%= link_to product do %>
-      <%= image_tag product.image.url, alt: product.name %>
+      <%= image_pack_tag "media#{product.image.url}", alt: product.name %>
       <h4><%= product.name %></h4>
     <% end %>
   </header>
@@ -9,10 +9,10 @@
     <%= product.description %>
   </p>
   <footer class="actions">
-    <%= button_to add_item_cart_path(product_id: product.id),  disabled: product.quantity == 0, class: 'btn btn-primary' , method: :post do %>
-      <%= fa_icon "shopping-cart", text: 'Add' %>
+    <%= button_to add_item_cart_path(product_id: product.id), disabled: product.quantity == 0, class: "btn btn-primary", method: :post do %>
+      <i class="fas fa-shopping-cart"></i>Add
     <% end %>
-    <%= link_to product, class: 'btn btn-default pull-right' do %>
+    <%= link_to product, class: "btn btn-default pull-right" do %>
       Details &raquo;
     <% end %>
   </footer>

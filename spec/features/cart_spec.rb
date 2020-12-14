@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require "rails_helper"
 
-RSpec.feature "Carts and orders", type: :feature, js: true do
-
+RSpec.describe "Carts and orders", type: :feature, js: true do
   # SETUP
   before :all do
     load "#{Rails.root}/db/seeds.rb"
@@ -17,11 +18,9 @@ RSpec.feature "Carts and orders", type: :feature, js: true do
     fill_in "user_password_confirmation", with: "hunter2"
 
     click_on "Register"
-
   end
 
-  scenario "no order table if cart is empty" do
-    
+  it "no order table if cart is empty" do
     # Log in first
     visit root_path
     click_on "Sign In"
@@ -33,8 +32,7 @@ RSpec.feature "Carts and orders", type: :feature, js: true do
     click_on("My Order (0)")
 
     # On orders page, there should be a no-items message and a link back to homepage
-    the_div = find('div', text: "no items")
+    the_div = find("div", text: "no items")
     expect(the_div).to have_selector('a[href="/"]')
   end
-
 end

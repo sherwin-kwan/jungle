@@ -3,7 +3,7 @@
 
 
   <div class="well">
-    <%= link_to '+ New sale', new_admin_sale_path, class: 'btn btn-info' %>
+    <%= link_to "+ New sale", new_admin_sale_path, class: "btn btn-info" %>
   </div>
 
   <table>
@@ -19,7 +19,7 @@
     </thead>
     <tbody>
       <% @sales.each do |sale| %>
-        <%= render 'sale', sale: sale %>
+        <%= render "sale", sale: sale %>
       <% end %>
     </tbody>
   </table>

@@ -2,7 +2,7 @@
 <main class="admin-dashboard">
   <h3>Fast Facts:</h3>
   <ul>
-    <li>Your store has <a href="/admin/products"><%= pluralize @totals[:products], 'product' %></a> in <%= pluralize @totals[:categories], "category" %>.</li>
+    <li>Your store has <a href="/admin/products"><%= pluralize @totals[:products], "product" %></a> in <%= pluralize @totals[:categories], "category" %>.</li>
     <li><%= pluralize @totals[:orders], "order" %> have been made for <%= pluralize @totals[:products_purchased], "product" %>.</li>
   </ul>
   <h3> Details of purchases: </h3>
@@ -18,7 +18,7 @@
       <% @products_table_array.each do |product_row| %>
         <tr>
           <td><%= product_row["id"] %></td>
-          <td><a href="/products/<%=product_row["id"]%>"><%= product_row["name"] %></a></td>
+          <td><a href="/products/<%= product_row["id"] %>"><%= product_row["name"] %></a></td>
           <td><%= product_row["count"] %></td>
         </tr>
       <% end %>

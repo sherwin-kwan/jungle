@@ -11,6 +11,7 @@
 
 # Ignore carrier wave uploads for development
 /public/uploads
+/app/javascript/images/uploads
 
 # Ignore db creds / settings
 /config/database.yml
@@ -61,3 +62,9 @@ node_modules
 
 # Test files
 testing.rb
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity

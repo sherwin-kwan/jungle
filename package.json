@@ -1,5 +1,17 @@
 {
+  "name": "yonago",
+  "version": "0.1",
+  "homepage": "https://github.com/sherwin-kwan/yonago",
+  "license": "GPL-3.0-or-later",
   "devDependencies": {
-    "phantomjs-prebuilt": "^2.1.16"
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1",
+    "@rails/webpacker": "5.2.1",
+    "bootstrap": "^4.5.3",
+    "jquery": "^3.5.1",
+    "normalize.css": "^8.0.1",
+    "popper.js": "^1.16.1"
   }
 }

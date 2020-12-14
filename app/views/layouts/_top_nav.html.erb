@@ -1,3 +1,11 @@
+<nav>
+  <span class="space"></span>
+  <%= link_to "Home", :root %>
+  <%= link_to "Menu", root_path(anchor: "menu") %>
+  <%= link_to "About Us", :about_index %>
+  <%= link_to "My Orders", orders_path %>
+</nav>
+<!-- 
 <nav class="navbar navbar-default navbar-fixed-top" id="topnav">
   <div class="container">
     <div class="navbar-header">
@@ -12,10 +20,10 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-          <%= link_to 'Home', :root %>
+          <%= link_to "Home", :root %>
         </li>
         <li>
-          <%= link_to 'About Us', :about_index %>
+          <%= link_to "About Us", :about_index %>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -24,7 +32,7 @@
           </a>
           <ul class="dropdown-menu">
             <% Category.all.each do |category| %>
-              <li><%= link_to category.name, category %></li>
+              <li><% link_to category.name, category %></li>
             <% end %>
           </ul>
         </li>
@@ -33,23 +41,23 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 
-            <span class="text-danger"><%= fa_icon 'lock', text: 'Admin' %></span>
+            <span class="text-danger"><i class="fas fa-lock"></i>Admin</span>
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            <li><%= link_to 'Dashboard', [:admin, :root] %></li>
-            <li><%= link_to 'Products',  [:admin, :products] %></li>
-            <li><%= link_to 'Categories',  [:admin, :categories] %></li>
-            <li><%= link_to 'Users',  [:admin, :users] %></li>
+            <li><%= link_to "Dashboard", [:admin, :root] %></li>
+            <li><%= link_to "Products", [:admin, :products] %></li>
+            <li><%= link_to "Categories", [:admin, :categories] %></li>
+            <li><%= link_to "Users", [:admin, :users] %></li>
           </ul>
         </li>
         <% if current_user %>
           <li>
-            <%= link_to "Sign Out", :users_logout %>
+            <%= link_to "Sign Out", :logout %>
           </li>
         <% else %>
           <li>
-            <%= link_to "Sign In", :users_login %>
+            <%= link_to "Sign In", :login %>
           </li>
           <li>
             <%= link_to "Sign Up", :new_user %>
@@ -57,10 +65,10 @@
         <% end %>
         <li>
           <%= link_to cart_path do %>
-            <%= fa_icon "shopping-cart" %> My Order (<%= cart.size %>)
+            <i class="fas fa-shopping-cart"></i> My Order (<%= cart.size %>)
           <% end %>
         </li>
       </ul>
     </div>
   </div>
-</nav>
+</nav> -->
