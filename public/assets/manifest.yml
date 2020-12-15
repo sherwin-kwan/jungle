@@ -1,3 +1,0 @@
-# By default, when deploying, Heroku attempts to precompile using the Rails asset pipeline, if no manifest.yml is found (which is generated during the precompile)
-# Since we are using Webpacker, it is not necessary to precompile assets, but Heroku tries to do it anyways.
-# So we put this file here to "trick" Heroku into skipping the precompile.

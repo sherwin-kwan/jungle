@@ -1,0 +1,4 @@
+
+{
+  "info": "By default, when deploying, Heroku attempts to precompile using the Rails asset pipeline. Since we are using Webpacker, we don't need this functionality, but this dummy file still has to be here to trick Heroku into skipping the asset precompile."
+}
