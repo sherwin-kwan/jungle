@@ -15,6 +15,7 @@
 body {
   background-color: $brand-blue;
   color: white;
+  text-align: center;
 
   a {
     color: inherit;
@@ -63,6 +64,27 @@ div.title-image {
   }
 }
 
+// Menu
+div.menu-section {
+  display: flex;
+  flex-direction: row;
+
+  h1 {
+    text-align: center;
+  }
+
+  .menu {
+    width: 75%;
+  }
+
+  .payments {
+    width: 25%;
+    background-color: $brand-yellow;
+  }
+}
+
+// See products.scss for everything in "div.products"
+
 // Bootstrap adjustments
 form.button_to {
   display: inline;
@@ -79,16 +101,6 @@ table {
   }
 }
 
-// nav.navbar {
-//   background-color: blue;
-// }
-
-// nav#topnav.navbar.navbar-default {
-//   color: #ffb;
-
-//   a,
-//   .navbar-brand,
-//   .text-danger {
-//     color: inherit;
-//   }
-// }
+footer {
+  text-align: center;
+}

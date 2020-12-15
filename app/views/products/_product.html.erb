@@ -5,24 +5,23 @@
       <h4><%= product.name %></h4>
     <% end %>
   </header>
+  <span class="price">
+    <%= humanized_money_with_symbol product.price %>
+  </span>
   <p class="description">
     <%= product.description %>
   </p>
   <footer class="actions">
     <%= button_to add_item_cart_path(product_id: product.id), disabled: product.quantity == 0, class: "btn btn-primary", method: :post do %>
-      <i class="fas fa-shopping-cart"></i>Add
+      <i class="fas fa-shopping-cart"></i>Order
     <% end %>
     <%= link_to product, class: "btn btn-default pull-right" do %>
       Details &raquo;
     <% end %>
   </footer>
-
-  <aside class="price">
-    <%= humanized_money_with_symbol product.price %>
-  </aside>
   <% if product.quantity == 0 %>
-  <aside class="sold-out">
-    SOLD OUT
-  </aside>
+    <aside class="sold-out" title="Sorry, sold out for the day">
+      SOLD OUT
+    </aside>
   <% end %>
 </article>
