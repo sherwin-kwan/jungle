@@ -13,7 +13,12 @@
 
 // Global
 body {
-  background-color: $brand-yellow;
+  background-color: $brand-blue;
+  color: white;
+
+  a {
+    color: inherit;
+  }
 }
 
 // Top Nav
