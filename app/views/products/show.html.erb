@@ -9,7 +9,7 @@
     <div class="row">
 
       <div class="col-sm-4">
-        <%= image_tag @product.image.url, class: 'main-img' %>
+        <%= image_pack_tag "media#{@product.image.url}", class: "main-img" %>
       </div>
 
       <div class="col-sm-8">
@@ -27,7 +27,7 @@
     </div>
 
     <% if (@product.quantity > 0) %>
-      <%= button_to "Add to Order", add_item_cart_path(product_id: @product.id), class: 'btn btn-primary' , method: :post %>
+      <%= button_to "Add to Order", add_item_cart_path(product_id: @product.id), class: "btn btn-primary", method: :post %>
     <% end %>
 
   </article>

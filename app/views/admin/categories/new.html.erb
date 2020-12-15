@@ -1,14 +1,14 @@
 <main>
   <h1>Create New Category</h1>
   <div class="well">
-    <%= link_to 'All Categories', [:admin, :categories], class: 'btn btn-info' %>
+    <%= link_to "All Categories", [:admin, :categories], class: "btn btn-info" %>
   </div>
   <%= form_for [:admin, @category] do |form| %>
     <div class="form-group">
       <%= form.label :name %>
-      <%= form.text_field :name, class: 'form-control' %>
+      <%= form.text_field :name, class: "form-control" %>
     </div>
-    <%= form.submit 'Create Category', class: 'btn btn-primary' %>
+    <%= form.submit "Create Category", class: "btn btn-primary" %>
 
   <% end %>
 </main>

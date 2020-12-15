@@ -1,13 +1,13 @@
-class Admin::SalesController < Admin::BaseController
-  def index
-    @sales = Sale.all
-  end
+# frozen_string_literal: true
 
-  def new
+module Admin
+  class SalesController < Admin::BaseController
+    def index
+      @sales = Sale.all
+    end
 
-  end
+    def new; end
 
-  def create
-    
+    def create; end
   end
 end

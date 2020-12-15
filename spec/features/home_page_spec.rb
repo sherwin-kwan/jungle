@@ -1,13 +1,14 @@
+# frozen_string_literal: true
+
 require "rails_helper"
 
-RSpec.feature "Visitor navigates to home page", type: :feature, js: true do
-
+RSpec.describe "Visitor navigates to home page", type: :feature, js: true do
   # SETUP
   before :all do
     load "#{Rails.root}/db/seeds.rb"
   end
 
-  scenario "They see all products" do
+  it "They see all products" do
     # ACT
     visit root_path
 

@@ -1,4 +1,6 @@
-require File.expand_path('../boot', __FILE__)
+# frozen_string_literal: true
+
+require File.expand_path("boot", __dir__)
 
 require "rails"
 # Pick the frameworks you want:
@@ -8,7 +10,7 @@ require "active_record/railtie"
 require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
-require "sprockets/railtie"
+# require "sprockets/railtie" # No long needed since webpacker is installed
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
@@ -30,10 +32,9 @@ module Yonago
     # config.i18n.default_locale = :de
 
     config.generators do |g|
-      g.skip_routes  true
-      g.helper       false
-      g.assets       false
+      g.skip_routes true
+      g.helper false
+      g.assets false
     end
-
   end
 end
