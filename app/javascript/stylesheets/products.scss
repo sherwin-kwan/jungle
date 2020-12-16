@@ -39,19 +39,6 @@ div.products {
       transition: all 0.3s;
     }
 
-    /* Appears at top right corner of a product */
-
-    aside.price {
-      position: absolute;
-      top: 0;
-      right: 0;
-      padding: 10px;
-      background-color: $brand-blue;
-      border-top-right-radius: 4px;
-      border-bottom-left-radius: 20px;
-      font-size: 1.2em;
-    }
-
     /* Appears at top left corner of a product */
 
     aside.sold-out {

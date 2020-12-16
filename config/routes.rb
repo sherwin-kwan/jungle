@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :categories, only: [:show]
   resources :about, only: [:index]
   resources :users, only: %i[new create]
-  resources :orders, only: %i[create show]
+  resources :orders, only: %i[create index show]
 
   get "/users/login" => "sessions#new", as: :login
   post "/users/login" => "sessions#create", as: :login_submit
