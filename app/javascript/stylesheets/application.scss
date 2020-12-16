@@ -74,13 +74,13 @@ div.menu-section {
     text-align: center;
   }
 
-  .menu {
-    width: 75%;
+  .categories {
+    width: 25%;
+    background-color: $brand-red;
   }
 
-  .payments {
-    width: 25%;
-    background-color: $brand-yellow;
+  .menu {
+    width: 75%;
   }
 }
 
