@@ -23,6 +23,7 @@ body {
   }
 }
 
+
 // Top Nav
 nav {
   display: flex;
@@ -44,6 +45,11 @@ nav {
     margin: 1rem;
     color: inherit;
   }
+}
+
+// For About Page
+div.placeholder {
+  height: 80px;
 }
 
 // Background image
