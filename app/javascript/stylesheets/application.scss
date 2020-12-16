@@ -74,15 +74,35 @@ div.menu-section {
     text-align: center;
   }
 
+
+// Categories Sidebar
+
   .categories {
     width: 25%;
     background-color: $brand-red;
+
+    ul {
+      padding-left: 0;
+
+      li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 4rem;
+        font-size: 2rem;
+
+        &.highlight {
+          background-color: $brand-blue;
+        }
+      }
+    }
   }
 
   .menu {
     width: 75%;
   }
 }
+
 
 // See products.scss for everything in "div.products"
 
