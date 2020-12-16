@@ -8,9 +8,10 @@
 
     <h3>Congratulations! Your order will be arriving shortly: </h3>
     <header>
+    <% binding.pry %>
       <span>Date: <%= @order.created_at %></span>
       <span>Total Cost: <%= humanized_money_with_symbol @order.total_cents / 100 %></span>
-      <span>Email: <%= @order.email %></span>
+      <span>Email: <%= @order.user.email %></span>
     </header>
     <main>
       <% @order.line_items.each do |item| %>
@@ -24,7 +25,7 @@
           <summary>Show Details</summary>
           <article>
             <aside>
-              <img src=<%= item.product.image %> >
+              <%= image_pack_tag "media#{item.product.image}", alt: "Image of #{item.product.name}" %>
             </aside>
             <div>
               <p><%= item.product.description %> </p>
