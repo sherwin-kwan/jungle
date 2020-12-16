@@ -2,10 +2,6 @@
   "name": "yonago",
   "version": "0.1",
   "homepage": "https://github.com/sherwin-kwan/yonago",
-  "engines": {
-    "node": "14.10.1",
-    "yarn": "1.22.5"
-  },
   "license": "MPL-2.0",
   "devDependencies": {
     "webpack-dev-server": "^3.11.0"
