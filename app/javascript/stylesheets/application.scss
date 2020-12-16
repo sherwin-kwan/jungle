@@ -3,6 +3,7 @@
 @import "orders";
 @import "about";
 @import "dashboard";
+@import "cart";
 
 // Variables
 @import "variables";
@@ -120,6 +121,7 @@ form.button_to {
 // Table format
 table {
   border-collapse: collapse;
+  margin: auto;
 
   td,
   th {
@@ -130,4 +132,9 @@ table {
 
 footer {
   text-align: center;
+}
+
+// To leave space around buttons and links at bottom of a page
+div.bottom-link {
+  padding: 2rem;
 }

@@ -1,6 +1,6 @@
 <section class="products-index">
   <div class="title-image" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url(<%= asset_pack_path('media/images/sushi-bar.jpg') %>)">
-    <%= image_pack_tag 'media/images/logo.jpg' %>
+    <%= image_pack_tag 'media/images/logo.jpg', alt: "Blue Ruby logo", title: "Yonago" %>
     <h1>YONAGO</h1>
     <h2>A gem of a Japanese eatery!</h2>
   </div>
@@ -22,6 +22,3 @@
   </div>
   <button>Pay</button>
 </section>
-<% content_for :end_of_body do %>
-  <p>(C) 2020 Sherwin Kwan. Yonago is an open source webapp - <a href="https://github.com/sherwin-kwan/yonago">see code here.</a></p>
-<% end %>

@@ -13,6 +13,8 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 5 }, unless: :is_guest?
   validates :password, presence: false, if: :is_guest?
 
+  has_many :orders, dependent: :nullify
+
   def self.authenticate_with_email(email, password)
     user = User.find_by(email: email.strip.downcase)
     return user if user&.authenticate(password)

@@ -1,12 +1,18 @@
+.order-show {
+  background: white;
+  color: black;
+}
+
 .order-summary {
+  width: calc(max(800px, 80vw));
+  margin: auto;
   
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.4em;
+    font-size: 1.2rem;
     margin: 10px;
-    color: green;
 
     span.title {
       font-weight: bold;
@@ -16,6 +22,8 @@
   section {
 
     border: 2px solid black;
+    display: flex;
+    flex-direction: column;
 
     summary {
       float: right;

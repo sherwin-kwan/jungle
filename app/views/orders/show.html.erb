@@ -1,30 +1,33 @@
-<section class="orders-show">
+<section class="order-show">
+  <!-- Placeholder div to make space for the navbar (which is a position: absolute) -->
+  <div class="placeholder"></div>
 
   <header class="page-header">
-    <h1>Order #<%= @order.id %></h1>
+    <h1>Your order number is: <%= @order.id %></h1>
   </header>
 
-  <div class="order-summary jumbotron">
+  <div class="order-summary">
 
     <h3>Congratulations! Your order will be arriving shortly: </h3>
     <header>
-      <span>Date: <%= @order.created_at %></span>
-      <span>Total Cost: <%= humanized_money_with_symbol @order.total_cents / 100 %></span>
-      <span>Email: <%= @order.email %></span>
+    <% # binding.pry %>
+      <span>Ordered at: <%= @order.created_at %></span>
+      <span>Total Cost: <%= humanized_money_with_symbol @order.total_cents.to_f / 100 %></span>
+      <span>Email: <%= @order.user.email %></span>
     </header>
     <main>
       <% @order.line_items.each do |item| %>
       <section>
         <header>
           <span class="title"><%= item.product.name %></span>
-          <span> <%= item.quantity %> x <%= humanized_money_with_symbol item.item_price_cents / 100 %> =
-           <%= humanized_money_with_symbol item.total_price_cents / 100 %></span>
+          <span> <%= item.quantity %> x <%= humanized_money_with_symbol item.item_price_cents.to_f / 100 %> =
+           <%= humanized_money_with_symbol item.total_price_cents.to_f / 100 %></span>
         </header>
         <details>
           <summary>Show Details</summary>
           <article>
             <aside>
-              <img src=<%= item.product.image %> >
+              <%= image_pack_tag "media#{item.product.image}", alt: "Image of #{item.product.name}" %>
             </aside>
             <div>
               <p><%= item.product.description %> </p>
@@ -35,7 +38,8 @@
       <% end %>
     </main>
   </div>
-
-  <%= link_to "Continue Shopping", root_path, class: "btn btn-lg btn-primary" %>
+  <div class="bottom-link">
+  <%= link_to "Place Another Order", root_path, class: "btn btn-lg btn-primary" %>
+  </div>
 
 </section>

@@ -4,7 +4,12 @@
 class OrdersController < ApplicationController
 
   def index
-    @order = Order.all
+    if session[:current_user]
+      # SELECT * FROM orders WHERE user_id = $1, session[:current_user]
+      @orders = Order.where(user_id: session[:current_user])
+    else
+      @orders = [];
+    end
   end
 
   def show
@@ -21,7 +26,7 @@ class OrdersController < ApplicationController
     else
       redirect_to cart_path, flash: { error: order.errors.full_messages.first }
     end
-  rescue Stripe::CardError => e
+  rescue StandardError, Stripe::CardError => e
     redirect_to cart_path, flash: { error: e.message }
   end
 
@@ -43,16 +48,17 @@ class OrdersController < ApplicationController
 
   def create_order(stripe_charge)
     order = Order.new(
-      email: params[:stripeEmail],
+      user_id: session[:current_user],
       total_cents: cart_subtotal_cents,
       stripe_charge_id: stripe_charge.id # returned by stripe
+      # status_id: 0
     )
 
     enhanced_cart.each do |entry|
       product = entry[:product]
       quantity = entry[:quantity]
       order.line_items.new(
-        product: product,
+        product_id: product.id,
         quantity: quantity,
         item_price: product.price,
         total_price: product.price * quantity
