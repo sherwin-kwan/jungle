@@ -4,7 +4,7 @@
 class OrdersController < ApplicationController
 
   def index
-    @order = Order.all
+    @orders = Order.all
   end
 
   def show
@@ -12,7 +12,6 @@ class OrdersController < ApplicationController
   end
 
   def create
-    binding.pry
     charge = perform_stripe_charge
     order = create_order(charge)
 

@@ -5,9 +5,7 @@
   <%= link_to "About Us", :about_index %>
   <%= link_to "My Orders", :orders %>
   <% if current_user %>
-    <li>
-      <%= link_to "Sign Out", :logout %>
-    </li>
+    <%= link_to "Sign Out", :logout %>
   <% end %>
 </nav>
 <!-- 

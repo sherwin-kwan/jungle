@@ -1,3 +1,38 @@
 <div class="placeholder"></div>
 <h1>My Orders</h1>
-<p>This page is under construction. It will eventually display a list of all orders the user has made.</p>
+<% binding.pry %>
+
+<table>
+  <thead>
+    <tr>
+      <th>
+        Order #
+      </th>
+      <th>
+        Ordered at
+      </th>
+      <th>
+        Total
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+    <tr>
+      <td>
+        <%= order.id %>
+      </td>
+      <td>
+        <%= order.created_at %>
+      </td>
+      <td>
+        <%= order.total_cents.to_f / 100 %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="bottom-link">
+  <%= link_to 'Home', root_path %>
+</div>
