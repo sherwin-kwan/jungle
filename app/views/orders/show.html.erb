@@ -21,7 +21,7 @@
         <header>
           <span class="title"><%= item.product.name %></span>
           <span> <%= item.quantity %> x <%= humanized_money_with_symbol item.item_price_cents.to_f / 100 %> =
-           <%= humanized_money_with_symbol item.total_price_cents / 100 %></span>
+           <%= humanized_money_with_symbol item.total_price_cents.to_f / 100 %></span>
         </header>
         <details>
           <summary>Show Details</summary>
