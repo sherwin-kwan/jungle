@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
 
   def index
     if session[:current_user]
-      @orders = Order.find_by(user_id: session[:current_user])
+      @orders = Order.where(user_id: session[:current_user])
     else
       @orders = [];
     end
