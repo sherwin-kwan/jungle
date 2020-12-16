@@ -11,7 +11,7 @@
     <h3>Congratulations! Your order will be arriving shortly: </h3>
     <header>
     <% # binding.pry %>
-      <span>Date: <%= @order.created_at %></span>
+      <span>Ordered at: <%= @order.created_at %></span>
       <span>Total Cost: <%= humanized_money_with_symbol @order.total_cents.to_f / 100 %></span>
       <span>Email: <%= @order.user.email %></span>
     </header>
