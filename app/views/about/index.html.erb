@@ -6,7 +6,11 @@
     Code for this app is available under the open-source Mozilla Public License, and is hosted on <a href="https://github.com/sherwin-kwan/yonago">
       Github</a>. It's based on a <a href="https://github.com/lighthouse-labs/jungle-rails">Rails e-commerce template</a> created by Khurram Virani.</p>
 </div>
-<% # image_pack_tag 'media/images/castle-of-candy.jpg', title: "Castle near Yonago", alt: "Castle near Yonago", class:"castle" %>
+
 <div data-controller="hello">
+  <h1>Next Steps</h1>
+  <p>This webapp is continually being improved. The next step right now is to experiment with using React to add asynchronous behaviour on particular
+  pages (such as the menu and purchases on the home page), as well as Stimulus.</p>
+  <%= react_component("HelloWorld", { greeting: "Hello from react-rails." }) %>
   <h1 data-target="hello.output"></h1>
 </div>
