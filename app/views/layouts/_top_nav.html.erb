@@ -6,6 +6,8 @@
   <%= link_to "My Orders", :orders %>
   <% if current_user %>
     <%= link_to "Sign Out", :logout %>
+  <% else %>
+    <%= link_to "Sign In", :login %>
   <% end %>
 </nav>
 <!-- 

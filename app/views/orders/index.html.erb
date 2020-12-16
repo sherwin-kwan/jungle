@@ -1,6 +1,6 @@
 <div class="placeholder"></div>
 <h1>My Orders</h1>
-<% binding.pry %>
+<% # binding.pry %>
 <% if @orders.length > 0 %>
   <table>
     <thead>
@@ -20,7 +20,7 @@
       <% @orders.each do |order| %>
         <tr>
           <td>
-            <%= order.id %>
+            <%= link_to order.id, order_path(session[:current_user]) %>
           </td>
           <td>
             <%= order.created_at %>

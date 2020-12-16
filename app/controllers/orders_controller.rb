@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
 
   def index
     if session[:current_user]
+      # SELECT * FROM orders WHERE user_id = $1, session[:current_user]
       @orders = Order.where(user_id: session[:current_user])
     else
       @orders = [];
