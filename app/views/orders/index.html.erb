@@ -1,38 +1,39 @@
 <div class="placeholder"></div>
 <h1>My Orders</h1>
-<% binding.pry %>
-
-<table>
-  <thead>
-    <tr>
-      <th>
-        Order #
-      </th>
-      <th>
-        Ordered at
-      </th>
-      <th>
-        Total
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @orders.each do |order| %>
-    <tr>
-      <td>
-        <%= order.id %>
-      </td>
-      <td>
-        <%= order.created_at %>
-      </td>
-      <td>
-        <%= order.total_cents.to_f / 100 %>
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<% if @orders.length > 0 %>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Order #
+        </th>
+        <th>
+          Ordered at
+        </th>
+        <th>
+          Total
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td>
+            <%= order.id %>
+          </td>
+          <td>
+            <%= order.created_at %>
+          </td>
+          <td>
+            <%= order.total_cents.to_f / 100 %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div>You can only view your past orders if you are <%= link_to "logged in", login_path %></div>
+<% end %>
 <div class="bottom-link">
   <%= link_to 'Home', root_path %>
 </div>

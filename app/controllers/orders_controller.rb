@@ -4,7 +4,11 @@
 class OrdersController < ApplicationController
 
   def index
-    @orders = Order.all
+    if session[:current_user]
+      @orders = Order.find_by(user_id: session[:current_user])
+    else
+      @orders = [];
+    end
   end
 
   def show
