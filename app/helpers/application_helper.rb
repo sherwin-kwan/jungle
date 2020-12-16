@@ -6,7 +6,7 @@
 # Helper methods for the app are stored in this class
 module ApplicationHelper
 
-  def ApplicationHelper.shuffle(arr)
+  def self.shuffle(arr)
     if arr.length < 2
       arr
     else

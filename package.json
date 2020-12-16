@@ -2,16 +2,23 @@
   "name": "yonago",
   "version": "0.1",
   "homepage": "https://github.com/sherwin-kwan/yonago",
-  "license": "GPL-3.0-or-later",
+  "license": "MPL-2.0",
   "devDependencies": {
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "@babel/preset-react": "^7.12.10",
     "@fortawesome/fontawesome-free": "^5.15.1",
     "@rails/webpacker": "5.2.1",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "bootstrap": "^4.5.3",
     "jquery": "^3.5.1",
     "normalize.css": "^8.0.1",
-    "popper.js": "^1.16.1"
+    "popper.js": "^1.16.1",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react_ujs": "^2.6.1",
+    "stimulus": "^2.0.0"
   }
 }

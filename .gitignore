@@ -8,10 +8,11 @@
 /log/*
 !/log/.keep
 /tmp
+/*.log
 
 # Ignore carrier wave uploads for development
 /public/uploads
-/app/javascript/images/uploads
+# /app/javascript/images/uploads
 
 # Ignore db creds / settings
 /config/database.yml
