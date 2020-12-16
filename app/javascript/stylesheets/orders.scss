@@ -1,4 +1,11 @@
+.order-show {
+  background: white;
+  color: black;
+}
+
 .order-summary {
+  width: calc(max(800px, 80vw));
+  margin: auto;
   
   header {
     display: flex;
@@ -16,6 +23,8 @@
   section {
 
     border: 2px solid black;
+    display: flex;
+    flex-direction: column;
 
     summary {
       float: right;
