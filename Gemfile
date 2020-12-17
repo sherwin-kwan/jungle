@@ -54,9 +54,9 @@ end
 
 group :development do
   gem "htmlbeautifier"
-  gem "pry-rails" # Allows for Pry breakpoints
   gem 'pry'
   gem 'pry-doc'
+  gem "pry-rails" # Allows for Pry breakpoints
   gem "rubocop" # linting
   gem "rubocop-rails", require: false # Rails-specific linting
   gem "rubocop-rspec", require: false # Rspec-specific linting
