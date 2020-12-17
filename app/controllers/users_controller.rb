@@ -5,6 +5,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.is_guest = false
 
+    # If the db query fails, ActiveRecord does not throw an error, but instead the "save" method returns false.
+    # So, put a condition to handle the error.
     if @user.save
       session[:current_user] = @user.id
       redirect_to :root
@@ -17,9 +19,9 @@ class UsersController < ApplicationController
 
   def create_guest
     @user = User.new({
-                       email: user_params.email,
-                       is_guest: true
-                     })
+      email: user_params.email,
+      is_guest: true,
+    })
 
     if @user.save
       session[:current_user] = @user.id

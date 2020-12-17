@@ -1,35 +1,28 @@
 <section class="products-show">
-
+  <div class="placeholder"></div>
   <header class="page-header">
     <h1><%= link_to @product.category.name, @product.category %> &raquo; <%= @product.name %></h1>
   </header>
-
-  <article class="product-detail">
-
+  <article>
     <div class="row">
-
-      <div class="col-sm-4">
+      <div>
         <%= image_pack_tag "media#{@product.image.url}", class: "main-img" %>
       </div>
-
-      <div class="col-sm-8">
-        <dl class="dl-horizontal">
-          <dt>Name</dt>
+      <div>
+        <dl>
+          <dt>Name:</dt>
           <dd><%= @product.name %></dd>
-          <dt>Description</dt>
+          <dt>Description:</dt>
           <dd><%= @product.description %></dd>
-          <dt>Quantity</dt>
+          <dt>Quantity Left:</dt>
           <dd><%= @product.quantity %></dd>
-          <dt>Price</dt>
+          <dt>Price:</dt>
           <dd><%= humanized_money_with_symbol @product.price %></dd>
         </dl>
       </div>
     </div>
-
     <% if (@product.quantity > 0) %>
       <%= button_to "Add to Order", add_item_cart_path(product_id: @product.id), class: "btn btn-primary", method: :post %>
     <% end %>
-
   </article>
-
 </section>
