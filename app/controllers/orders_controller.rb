@@ -13,6 +13,7 @@ class OrdersController < ApplicationController
   end
 
   def show
+    # SELECT * FROM orders WHERE id = $1, [params[:id]]
     @order = Order.find(params[:id])
   end
 
@@ -64,6 +65,12 @@ class OrdersController < ApplicationController
         total_price: product.price * quantity
       )
     end
+    # INSERT INTO orders (user_id, total_cents, stripe_charge_id) VALUES (session[:current_user], cart_subtotal_cents, stripe_charge.id) RETURNING id
+    # Let order_id = the returned id
+    # INSERT INTO line_items (product_id, order_id, quantity, item_price, total_price) VALUES
+    # (iterate through line items)
+    # (first query the Products database to find the product the entry references)
+    # (product.id, order_id, entry.quantity, product.price, product.price * quantity)
     order.save!
     order
   end
