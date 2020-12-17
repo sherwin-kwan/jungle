@@ -63,10 +63,24 @@ div.products {
   }
 }
 
-main section.products-show {
-  .product-detail {
-    img.main-img {
-      max-width: 100%;
+section.products-show .row {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+
+  img.main-img {
+    max-width: 100%;
+  }
+
+  dl {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    text-align: left;
+    margin-left: 4rem;
+
+    dt, dd {
+      padding-bottom: 0.3rem;
+      padding-top: 0.3rem;
     }
   }
 }
