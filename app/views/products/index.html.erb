@@ -4,6 +4,7 @@
     <h1>YONAGO</h1>
     <h2>A gem of a Japanese eatery!</h2>
   </div>
+  <%= react_component("Base", { categories: @categories, products: @products }) %>
   <div class="menu-section">
     <div class="categories">
       <ul>
@@ -21,7 +22,4 @@
     </div>
   </div>
   <%= link_to "Pay Now", cart_path, class: "pay-button" %>
-  <div class="cart-section">
-    <%= react_component("Cart") %>
-  </div>
 </section>

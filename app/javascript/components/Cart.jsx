@@ -1,5 +1,6 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
+
 class Cart extends React.Component {
 
   constructor(props) {
@@ -28,4 +29,4 @@ class Cart extends React.Component {
   }
 }
 
-export default Cart
+export default Cart;
