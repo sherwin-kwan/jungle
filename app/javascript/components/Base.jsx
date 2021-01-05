@@ -11,16 +11,20 @@ class Base extends React.Component {
     this.state = {
       cart: {
         item_sample: 1
-      }
+      },
+      category: 0
     };
   };
+  setCategory = (id) => {
+    this.setState({category: id})
+  }
 
   render () {
     return (
       <>
         <div className="menu-section">
           <div className="categories">
-            <Categories data={this.props.categories} />
+            <Categories data={this.props.categories} category={this.state.category} setCategory={this.setCategory.bind(this)} />
           </div>
           <div className="menu">
             <header className="page-header" id="menu">
