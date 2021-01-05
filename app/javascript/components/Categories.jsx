@@ -8,6 +8,7 @@ class Categories extends React.Component {
     this.state = {
       selectedCategory: 0,
     };
+    // Bind "this" to this class so setState is in scope
     this.setCategory = this.setCategory.bind(this);
   }
   setCategory(id) {
