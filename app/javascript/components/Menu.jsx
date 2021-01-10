@@ -10,15 +10,14 @@ const Menu = (props) => {
     );
   });
   return (
-
-    <div className="menu">
+    <>
       <header className="page-header" id="menu">
         <h1>Our Menu</h1>
       </header>
       <div className="products">
         {dishes}
       </div>
-    </div>   
+    </>   
   );
 };
 

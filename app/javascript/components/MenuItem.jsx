@@ -1,5 +1,4 @@
 import React from "react";
-import cRoll from "../images/uploads/product/image/01-california-roll.jpg";
 
 const MenuItem = (props) => {
   const { data } = props;
@@ -15,15 +14,12 @@ const MenuItem = (props) => {
     }
   };
 
-  const imagePath = ".." + data.image.url;
-
   console.log('Data is: ', data);
   return (
   <article className="product">
-    This is where the menu goes.
     <header>
       <a href="">
-        <img alt={data.name} src={require(`${imagePath}`)} />
+        <img alt={data.name} src={data.image_url} />
         <h4>{data.name}</h4>
       </a>
     </header>
