@@ -14,6 +14,14 @@ const MenuItem = (props) => {
     }
   };
 
+  const soldOut = (
+  <aside class="sold-out" title="Sorry, sold out for the day">
+    SOLD OUT
+  </aside>);
+
+  // Manually form RESTful url since we're not in Rails anymore
+  const detailsUrl = "/products/" + String(data.id);
+
   console.log('Data is: ', data);
   return (
   <article className="product">
@@ -29,19 +37,13 @@ const MenuItem = (props) => {
     <p className="description">
       {data.description}
     </p>
-    {/* <footer class="actions">
-      <%= button_to add_item_cart_path(product_id: product.id), disabled: product.quantity == 0, class: "btn btn-primary", method: :post do %>
+    <footer class="actions">
+      <button>
         <i class="fas fa-shopping-cart"></i>Order
-      <% end %>
-      <%= link_to product, class: "btn btn-default pull-right" do %>
-        Details &raquo;
-      <% end %>
+      </button>
+      <a href={detailsUrl}>Details &gt;&gt;</a>
     </footer>
-    <% if product.quantity == 0 %>
-      <aside class="sold-out" title="Sorry, sold out for the day">
-        SOLD OUT
-      </aside>
-    <% end %> */}
+    {data.quantity === 0 && soldOut}
   </article>);
 };
 

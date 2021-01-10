@@ -18,10 +18,10 @@
   end
   react_component("Base", { categories: @categories, products: products_with_pack_urls })
    %>
-  <%# <div class="menu-section">
+  <div class="menu-section">
     <div class="categories">
       <ul>
-        render partial: 'category', collection: @categories 
+        <%= render partial: 'category', collection: @categories %>
       </ul>
     </div>
     <div class="menu">
@@ -29,9 +29,9 @@
         <h1>Our Menu</h1>
       </header>
       <div class="products">
-         render partial: 'product', collection: @products
+         <%= render partial: 'product', collection: @products %>
       </div>
     </div>
-  </div> %>
+  </div> 
   <%= link_to "Pay Now", cart_path, class: "pay-button" %>
 </section>
