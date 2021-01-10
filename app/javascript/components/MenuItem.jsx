@@ -1,7 +1,7 @@
 import React from "react";
+import cRoll from "../images/uploads/product/image/01-california-roll.jpg";
 
 const MenuItem = (props) => {
-
   const { data } = props;
 
   const formattedPrice = (price_cents) => {
@@ -15,13 +15,15 @@ const MenuItem = (props) => {
     }
   };
 
+  const imagePath = ".." + data.image.url;
+
   console.log('Data is: ', data);
   return (
   <article className="product">
     This is where the menu goes.
     <header>
       <a href="">
-        <img alt={data.name} src={"/packs/media" + data.image.url} />
+        <img alt={data.name} src={require(`${imagePath}`)} />
         <h4>{data.name}</h4>
       </a>
     </header>
