@@ -1,32 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Categories from "./Categories";
 import Menu from "./Menu";
 import Cart from "./Cart";
 
-class Base extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      cart: {
-        item_sample: 1,
-      },
-      category: 0,
-    };
-  }
-  setCategory = (id) => {
-    this.setState({ category: id });
-  };
+const Base = (props) => {
 
-  render() {
+  [category, setCategory] = useState(0);
+  [cart, setCart] = useState(0);
+
     return (
       <>
         <div className="menu-section">
           <div className="categories">
             <Categories
-              data={this.props.categories}
-              category={this.state.category}
-              setCategory={this.setCategory.bind(this)}
+              data={props.categories}
+              category={category}
+              setCategory={setCategory}
             />
           </div>
           <div className="menu">
@@ -38,7 +28,6 @@ class Base extends React.Component {
         </div>
       </>
     );
-  }
 }
 
 export default Base;
