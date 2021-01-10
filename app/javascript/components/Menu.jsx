@@ -4,7 +4,9 @@ import MenuItem from './MenuItem';
 
 const Menu = (props) => {
 
-  const dishes = props.data.map(dish => {
+  const data = (props.category === 0) ? props.data : props.data.filter(val => val.category_id === props.category);
+
+  const dishes = data.map(dish => {
     return (
       <MenuItem data={dish} />
     );

@@ -19,7 +19,7 @@ const Base = (props) => {
           />
         </div>
         <div className="menu">
-          <Menu data={props.products} />
+          <Menu data={props.products} category={category} />
         </div>
       </div>
       <div className="cart-section">
