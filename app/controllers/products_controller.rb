@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-
 # Controller class to display products (dishes)
 class ProductsController < ApplicationController
   def index
@@ -13,5 +12,4 @@ class ProductsController < ApplicationController
     # SELECT * FROM products WHERE id = $1, [params[:id]]
     @product = Product.find params[:id]
   end
-
 end
