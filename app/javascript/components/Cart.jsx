@@ -5,15 +5,13 @@ class Cart extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      items: {item: 1}
-    }
+    
   }
 
   componentDidMount() {
-    this.timer = setInterval(() => {
-      this.setState({items: {item: this.state.items.item + 1}});
-    }, 1000);
+    // this.timer = setInterval(() => {
+    //   this.setState({items: {item: this.state.items.item + 1}});
+    // }, 1000);
   }
 
   componentWillUnmount() {
@@ -21,9 +19,10 @@ class Cart extends React.Component {
   }
 
   render () {
+    const items = 90;
     return (
       <>
-        This is where the shopping cart goes. Items: {this.state.items.item}
+        This is where the shopping cart goes. Items: {items}
       </>
     );
   }

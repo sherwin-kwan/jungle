@@ -26,7 +26,7 @@ const MenuItem = (props) => {
   return (
   <article className="product">
     <header>
-      <a href="">
+      <a href={detailsUrl}>
         <img alt={data.name} src={data.image_url} />
         <h4>{data.name}</h4>
       </a>
@@ -38,7 +38,7 @@ const MenuItem = (props) => {
       {data.description}
     </p>
     <footer class="actions">
-      <button>
+      <button onClick={() => incrementItem(data.id)}>
         <i class="fas fa-shopping-cart"></i>Order
       </button>
       <a href={detailsUrl}>Details &gt;&gt;</a>

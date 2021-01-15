@@ -23,7 +23,7 @@ const Base = (props) => {
         </div>
       </div>
       <div className="cart-section">
-        <Cart />
+        <Cart cart={cart} setCart={setCart}/>
       </div>
     </>
   );

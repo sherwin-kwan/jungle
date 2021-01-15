@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source "https://rubygems.org"
-ruby "2.7.0"
+ruby "3.0.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem "rails", "6.1"
@@ -34,7 +34,7 @@ gem "bcrypt", "~> 3.1.16"
 
 gem "puma" # Multithreading server, used for development and test environments
 
-gem "bootstrap-sass", "~> 3.4.1" # CSS library
+# gem "bootstrap-sass", "~> 3.4.1" # CSS library
 gem "carrierwave" # Image upload functionality
 gem "font-awesome-rails" # CSS library
 gem "money-rails" # Currencies

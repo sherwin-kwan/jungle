@@ -16,7 +16,7 @@
 
 import 'jquery';
 import 'popper.js';
-import 'bootstrap';
+// import 'bootstrap';
 import "@fortawesome/fontawesome-free/js/all";
 
 const images = require.context('../images', true)
