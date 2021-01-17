@@ -19,15 +19,13 @@ class UsersController < ApplicationController
 
   def create_guest
     @user = User.new({
-      email: user_params.email,
+      email: params[:email],
       is_guest: true,
     })
-
-    if @user.save
-      session[:current_user] = @user.id
-    else
-      raise "Guest user could not be created"
-    end
+    binding.pry
+    @user.save
+    session[:current_user] = @user.id
+    redirect_back(fallback_location: cart_path)
   end
 
   def new

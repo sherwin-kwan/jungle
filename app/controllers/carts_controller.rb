@@ -1,10 +1,21 @@
 # frozen_string_literal: true
 
 class CartsController < ApplicationController
-  before_action :authorize
+  # before_action :authorize
+  skip_before_action :verify_authenticity_token
 
   def show
-    @email = @current_user.email
+    @email = current_user.email if current_user
+  end
+
+  # Items in the format [{id: 1, quantity: 2}, {id: 2, quantity: 3}] meaning "2 orders of item ID 1 and 3 orders of item ID 2"
+  def fill
+    cart = {}
+    params[:_json].each do |item|
+      cart[item[:id]] = item[:quantity]
+    end
+    update_cart cart
+    render plain: "OK"
   end
 
   def add_item

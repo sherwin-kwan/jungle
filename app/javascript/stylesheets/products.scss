@@ -26,8 +26,12 @@ div.products {
       margin: auto;
       display: block;
     }
-    + footer {
+    
+    footer {
       position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       bottom: 0;
       left: 0;
       color: #eee;
@@ -35,7 +39,6 @@ div.products {
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px;
       width: 100%;
-      opacity: 0.3;
       transition: all 0.3s;
     }
 
@@ -54,11 +57,7 @@ div.products {
     }
 
     &:hover {
-      border-color: #999;
-
-      footer {
-        opacity: 1;
-      }
+      background-color: #08f;
     }
   }
 }

@@ -2,14 +2,9 @@
 
 # Controller for orders routes
 class OrdersController < ApplicationController
-
   def index
-    if session[:current_user]
-      # SELECT * FROM orders WHERE user_id = $1, session[:current_user]
-      @orders = Order.where(user_id: session[:current_user])
-    else
-      @orders = [];
-    end
+    @orders = session[:current_user] ? Order.where(user_id: session[:current_user]) : []
+    # SELECT * FROM orders WHERE user_id = $1, session[:current_user]
   end
 
   def show
@@ -43,7 +38,7 @@ class OrdersController < ApplicationController
       source: params[:stripeToken],
       amount: cart_subtotal_cents,
       description: "Your Yonago takeout order",
-      currency: "cad"
+      currency: "cad",
     )
   end
 
@@ -51,7 +46,7 @@ class OrdersController < ApplicationController
     order = Order.new(
       user_id: session[:current_user],
       total_cents: cart_subtotal_cents,
-      stripe_charge_id: stripe_charge.id # returned by stripe
+      stripe_charge_id: stripe_charge.id, # returned by stripe
       # status_id: 0
     )
 
@@ -62,7 +57,7 @@ class OrdersController < ApplicationController
         product_id: product.id,
         quantity: quantity,
         item_price: product.price,
-        total_price: product.price * quantity
+        total_price: product.price * quantity,
       )
     end
     # INSERT INTO orders (user_id, total_cents, stripe_charge_id) VALUES (session[:current_user], cart_subtotal_cents, stripe_charge.id) RETURNING id
