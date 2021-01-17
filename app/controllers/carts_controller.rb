@@ -10,6 +10,7 @@ class CartsController < ApplicationController
 
   # Items in the format [{id: 1, quantity: 2}, {id: 2, quantity: 3}] meaning "2 orders of item ID 1 and 3 orders of item ID 2"
   def fill
+    cart = {}
     params[:_json].each do |item|
       cart[item[:id]] = item[:quantity]
     end
