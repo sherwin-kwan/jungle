@@ -9,15 +9,14 @@ const Base = (props) => {
   const [cart, setCart] = useState([]);
 
   const decrementItem = (id) => {
-    console.log('Attempting to decrement ', id);
     const itemInCart = cart.findIndex(item => item.id === id);
-    console.log(itemInCart, 'item in cart');
     if (itemInCart === -1) {
       console.log('Error: Item already not in cart');
     } else {
       setCart(prev => prev.map(prevItem => {
+        console.log('Previtem is: ', prevItem);
         if (prevItem.id === id) {
-          return (prevItem.quantity === 1) ? {} : {
+          return {
             id,
             name: prevItem.name,
             imageUrl: prevItem.imageUrl,
@@ -27,6 +26,7 @@ const Base = (props) => {
         } else return prevItem;
       }
       ));
+      setCart(prev => prev.filter(item => item.quantity > 0));
     }
   };
 
@@ -47,9 +47,9 @@ const Base = (props) => {
         if (prevItem.id === id) {
           return {
             id, 
-            name,
-            imageUrl: image_tiny_url,
-            price_cents,
+            name: prevItem.name,
+            imageUrl: prevItem.imageUrl,
+            price_cents: prevItem.price_cents,
             quantity: prevItem.quantity + 1
           }
         } else return prevItem;
