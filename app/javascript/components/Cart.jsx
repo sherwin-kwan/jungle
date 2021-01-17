@@ -1,12 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import CartItem from "./CartItem";
+import axios from "axios";
 
 class Cart extends React.Component {
-
   constructor(props) {
     super(props);
-    
   }
 
   componentDidMount() {
@@ -15,17 +14,37 @@ class Cart extends React.Component {
     // }, 1000);
   }
 
-  componentWillUnmount() {
+  componentWillUnmount() {}
 
-  }
-
-  render () {
-    console.log(`Cart is: `, this.props.cart);
-    const items = this.props.cart.map(item => {
+  render() {
+    const items = this.props.cart.map((item) => {
       return (
-        <CartItem imageUrl={item.imageUrl} name={item.name} unitPriceCents={item.price_cents} quantity={item.quantity} />
-      )
+        <CartItem
+          imageUrl={item.imageUrl}
+          name={item.name}
+          unitPriceCents={item.price_cents}
+          quantity={item.quantity}
+        />
+      );
     });
+    const submitOrder = async (cart) => {
+      try {
+        const simpleCart = cart.map((item) => {
+          return {
+            id: item.id,
+            price_cents: item.price_cents,
+            quantity: item.quantity,
+          };
+        });
+        console.log(simpleCart);
+        const sendOrder = await axios.post("/cart/fill", simpleCart);
+        if (sendOrder.data === "OK") {
+          window.location.href = `/cart`;
+        }
+      } catch (err) {
+        console.log("Errror: ", err.message);
+      }
+    };
     return (
       <>
         This is where the shopping cart goes. Items: <br />
@@ -38,10 +57,9 @@ class Cart extends React.Component {
               <th>Total price</th>
             </tr>
           </thead>
-          <tbody>
-            {items}
-          </tbody>
+          <tbody>{items}</tbody>
         </table>
+        <button onClick={() => submitOrder(this.props.cart)}>Order Now</button>
       </>
     );
   }

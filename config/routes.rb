@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   # To be deprecated and replaced with a state handler on the front end
   resource :cart, only: [:show] do
+    post :fill
     post :add_item
     post :remove_item
   end
