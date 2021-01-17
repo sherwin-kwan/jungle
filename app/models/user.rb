@@ -3,7 +3,7 @@
 require "uri"
 
 class User < ApplicationRecord
-  has_secure_password
+  has_secure_password unless :is_guest? 
 
   before_create :lowercase_email
   before_validation :lowercase_email
