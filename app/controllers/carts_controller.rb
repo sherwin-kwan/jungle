@@ -5,7 +5,8 @@ class CartsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def show
-    @email = @current_user ? @current_user.email : "Guest"
+    binding.pry
+    @email = current_user.email if current_user
   end
 
   # Items in the format [{id: 1, quantity: 2}, {id: 2, quantity: 3}] meaning "2 orders of item ID 1 and 3 orders of item ID 2"
