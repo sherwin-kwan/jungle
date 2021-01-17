@@ -20,10 +20,15 @@ class Cart extends React.Component {
     const items = this.props.cart.map((item) => {
       return (
         <CartItem
+          id={item.id}
           imageUrl={item.imageUrl}
           name={item.name}
+          cart={this.props.cart}
+          setCart={this.props.setCart}
           unitPriceCents={item.price_cents}
           quantity={item.quantity}
+          incrementItem={this.props.incrementItem}
+          decrementItem={this.props.decrementItem}
         />
       );
     });

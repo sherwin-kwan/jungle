@@ -12,9 +12,9 @@ const CartItem = (props) => {
       </td>
       <td>{formattedPrice(props.unitPriceCents)}</td>
       <td>
-        <button className="decrement"> - </button>
+        <button className="decrement" onClick={() => props.decrementItem(props.id)}> - </button>
         {props.quantity}
-        <button className="increment"> + </button>
+        <button className="increment" onClick={() => props.incrementItem(props.id)}> + </button>
       </td>
       <td>{formattedPrice(props.unitPriceCents * props.quantity)}</td>
     </tr>

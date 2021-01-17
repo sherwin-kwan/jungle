@@ -23,7 +23,6 @@ const MenuItem = (props) => {
   // Manually form RESTful url since we're not in Rails anymore
   const detailsUrl = "/products/" + String(data.id);
 
-  console.log('Data is: ', data);
   return (
   <article className="product">
     <header>
