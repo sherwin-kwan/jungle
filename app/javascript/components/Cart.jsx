@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import CartItem from "./CartItem";
 import axios from "axios";
+import { formattedPrice } from './helpers';
 
 class Cart extends React.Component {
   constructor(props) {
@@ -9,9 +10,6 @@ class Cart extends React.Component {
   }
 
   componentDidMount() {
-    // this.timer = setInterval(() => {
-    //   this.setState({items: {item: this.state.items.item + 1}});
-    // }, 1000);
   }
 
   componentWillUnmount() {}
@@ -32,6 +30,9 @@ class Cart extends React.Component {
         />
       );
     });
+    const subtotal = formattedPrice(this.props.cart.reduce((acc, item) => {
+      return acc + item.price_cents * item.quantity;
+    }, 0));
     const submitOrder = async (cart) => {
       try {
         const simpleCart = cart.map((item) => {
@@ -66,6 +67,12 @@ class Cart extends React.Component {
                 </tr>
               </thead>
               <tbody>{items}</tbody>
+              <tfoot>
+                <tr>
+                  <td colSpan="4">TOTAL</td>
+                  <td>{subtotal}</td>
+                </tr>
+              </tfoot>
             </table>
             <button onClick={() => submitOrder(this.props.cart)}>
               Order Now

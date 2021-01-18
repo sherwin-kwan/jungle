@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Categories from "./Categories";
 import Menu from "./Menu";
 import Cart from "./Cart";
-import fillCart from '../helpers/fillCart';
+import { fillCart } from './helpers';
 
 const Base = (props) => {
   const [category, setCategory] = useState(0);
@@ -77,6 +77,12 @@ const Base = (props) => {
       </div>
     </>
   );
+};
+
+Base.propTypes = {
+  products: PropTypes.array,
+  categories: PropTypes.array,
+  current_cart: PropTypes.object
 };
 
 export default Base;
