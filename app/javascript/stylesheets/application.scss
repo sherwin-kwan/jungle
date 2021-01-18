@@ -122,16 +122,16 @@ div.menu-section {
     background-color: $brand-yellow;
     color: black;
 
-    button {
+    button.decrement, button.increment {
       margin: 0.25rem;
       font-size: 1rem;
       padding: 0.25rem;
+    }
 
-      &.convert-button {
-        font-size: 1.5rem;
-        padding: 0.8rem;
-        font-weight: bold;
-      }
+    button.convert-button {
+      font-size: 1.5rem;
+      padding: 0.8rem;
+      font-weight: bold;
     }
   }
 }
@@ -180,6 +180,10 @@ button, input[type="submit"] {
   font-weight: bold;
   padding: 0.8rem;
 
+  &:hover {
+    background-color: #080;
+  }
+
   &:disabled {
     background-color: gray;
     opacity: 50%;
@@ -187,6 +191,7 @@ button, input[type="submit"] {
 
   &.cancel, &.decrement {
     background-color: $brand-red;
+
   }
 }
 

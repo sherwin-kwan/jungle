@@ -1,15 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import CartItem from "./CartItem";
-import { subtotal, submitOrder } from './helpers';
+import { subtotal, submitOrder } from "./helpers";
 
 class Cart extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  componentDidMount() {
-  }
+  componentDidMount() {}
 
   componentWillUnmount() {}
 
@@ -53,8 +52,14 @@ class Cart extends React.Component {
                 </tr>
               </tfoot>
             </table>
-            <button className="convert-button" onClick={() => submitOrder(this.props.cart)}>
+            <button
+              className="convert-button"
+              onClick={() => submitOrder(this.props.cart)}
+            >
               Order Now
+            </button>
+            <button className="cancel" onClick={() => this.props.setCart({})}>
+              Cancel Order
             </button>
           </>
         ) : (
@@ -63,13 +68,13 @@ class Cart extends React.Component {
       </>
     );
   }
-};
+}
 
 Cart.propTypes = {
   decrementItem: PropTypes.func,
   incrementItem: PropTypes.func,
   cart: PropTypes.array,
-  setCart: PropTypes.func
+  setCart: PropTypes.func,
 };
 
 export default Cart;
