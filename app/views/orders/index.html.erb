@@ -20,7 +20,7 @@
       <% @orders.each do |order| %>
         <tr>
           <td>
-            <%= link_to order.id, order_path(session[:current_user]) %>
+            <%= link_to order.id, order_path(order.id) %>
           </td>
           <td>
             <%= order.created_at %>

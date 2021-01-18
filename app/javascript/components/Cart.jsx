@@ -52,19 +52,28 @@ class Cart extends React.Component {
     };
     return (
       <>
-        This is where the shopping cart goes. Items: <br />
-        <table>
-          <thead>
-            <tr>
-              <th colSpan="2">Dish</th>
-              <th>Unit price</th>
-              <th>Quantity</th>
-              <th>Total price</th>
-            </tr>
-          </thead>
-          <tbody>{items}</tbody>
-        </table>
-        <button onClick={() => submitOrder(this.props.cart)}>Order Now</button>
+        <h3>YOUR ORDER</h3>
+        <br />
+        {this.props.cart.length ? (
+          <>
+            <table>
+              <thead>
+                <tr>
+                  <th colSpan="2">Dish</th>
+                  <th>Unit price</th>
+                  <th>Quantity</th>
+                  <th>Total price</th>
+                </tr>
+              </thead>
+              <tbody>{items}</tbody>
+            </table>
+            <button onClick={() => submitOrder(this.props.cart)}>
+              Order Now
+            </button>
+          </>
+        ) : (
+          <p>Click "Add" above to start adding dishes to your order!</p>
+        )}
       </>
     );
   }
