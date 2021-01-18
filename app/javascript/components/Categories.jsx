@@ -12,6 +12,7 @@ class Categories extends React.Component {
       return (
         <CategoryItem
           id={category.id}
+          key={category.id}
           selectedId={this.props.category}
           setCategory={this.props.setCategory}
           text={category.name}
@@ -23,6 +24,7 @@ class Categories extends React.Component {
       <ul>
         <CategoryItem
           id={0}
+          key={0}
           selectedId={this.props.category}
           setCategory={this.props.setCategory}
           text="All"

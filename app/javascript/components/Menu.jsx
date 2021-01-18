@@ -8,7 +8,7 @@ const Menu = (props) => {
 
   const dishes = data.map(dish => {
     return (
-      <MenuItem data={dish} incrementItem={props.incrementItem} />
+      <MenuItem key={dish.id} data={dish} incrementItem={props.incrementItem} />
     );
   });
   return (

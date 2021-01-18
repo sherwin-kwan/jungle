@@ -19,6 +19,7 @@ class Cart extends React.Component {
       return (
         <CartItem
           id={item.id}
+          key={item.id}
           imageUrl={item.imageUrl}
           name={item.name}
           cart={this.props.cart}
