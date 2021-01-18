@@ -2,7 +2,7 @@
   <h1>Welcome to Yonago!</h1>
   <p>The name Yonago is a tribute to <a href="https://twitter.com/yukihiro_matz">Matz</a> (Matsumoto Yukihiro), the developer who created the Ruby language in 1995, 
     who is a native of Yonago on the western coast of Japan. Matz still lives in the area, and a Ruby conference is held in nearby Matsue every year.</p>
-  <p>This is a Ruby on Rails app created by <a href="https://linkedin.com/in/sherwinkwan">Sherwin Kwan</a> to practice Ruby.
+  <p>This is a Ruby on Rails app created by <a href="https://linkedin.com/in/sherwinkwan">Sherwin Kwan</a>, with React being used to render the menu on the home page.
     Code for this app is available under the open-source Mozilla Public License, and is hosted on <a href="https://github.com/sherwin-kwan/yonago">
       Github</a>. It's based on a <a href="https://github.com/lighthouse-labs/jungle-rails">Rails e-commerce template</a> created by Khurram Virani.</p>
 </div>
@@ -12,12 +12,11 @@
   <p>This webapp is continually being improved. My backlog includes:</p>
   <ul>
     <li>Adding an option for delivery</li>
+    <li>Adding a dashboard for admins to track revenues</li>
     <li>Adding a maps API so users can see how to arrive at the restaurant/know how long a delivery will take</li>
     <li>Incorporating sales taxes</li>
     <li>Allowing users to recommend and favourite dishes</li>
-  </ul>
-   The next step right now is to experiment with using React to add asynchronous behaviour on particular
-  pages (such as the menu and purchases on the home page), as well as Stimulus.</p>
+  </ul></p>
   <%= react_component("HelloWorld", { greeting: "Hello from react-rails." }) %>
   <!--<h1 data-target="hello.output"></h1>-->
 </div>
