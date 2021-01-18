@@ -1,5 +1,6 @@
 import React from "react";
 import { formattedPrice } from "./helpers";
+import PropTypes from 'prop-types';
 
 const MenuItem = (props) => {
   const { data } = props;
@@ -45,6 +46,11 @@ const MenuItem = (props) => {
     </footer>
     {data.quantity === 0 && soldOut}
   </article>);
+};
+
+MenuItem.propTypes = {
+  data: PropTypes.object,
+  incrementItem: PropTypes.func
 };
 
 export default MenuItem;

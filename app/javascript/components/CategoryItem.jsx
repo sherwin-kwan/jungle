@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 const CategoryItem = (props) => {
   return (
@@ -7,6 +8,13 @@ const CategoryItem = (props) => {
       {props.text}
     </li>
   );
+};
+
+CategoryItem.propTypes = {
+  id: PropTypes.number,
+  selectedId: PropTypes.number,
+  setCategory: PropTypes.func,
+  text: PropTypes.string
 };
 
 export default CategoryItem;

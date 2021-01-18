@@ -1,5 +1,6 @@
 import React from "react";
 import { formattedPrice } from './helpers';
+import PropTypes from 'prop-types';
 
 const CartItem = (props) => {
   return (
@@ -19,6 +20,18 @@ const CartItem = (props) => {
       <td>{formattedPrice(props.unitPriceCents * props.quantity)}</td>
     </tr>
   );
+};
+
+CartItem.propTypes = {
+  id: PropTypes.number,
+  imageUrl: PropTypes.string,
+  name: PropTypes.string,
+  cart: PropTypes.array,
+  setCart: PropTypes.func,
+  unitPriceCents: PropTypes.number,
+  quantity: PropTypes.number,
+  decrementItem: PropTypes.func,
+  incrementItem: PropTypes.func
 };
 
 export default CartItem;

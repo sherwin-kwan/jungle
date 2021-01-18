@@ -8,7 +8,7 @@ const Menu = (props) => {
 
   const dishes = data.map(dish => {
     return (
-      <MenuItem data={dish} incrementItem={props.incrementItem} />
+      <MenuItem key={dish.id} data={dish} incrementItem={props.incrementItem} />
     );
   });
   return (
@@ -21,6 +21,12 @@ const Menu = (props) => {
       </div>
     </>   
   );
+};
+
+Menu.propTypes = {
+  data: PropTypes.array,
+  category: PropTypes.number,
+  incrementItem: PropTypes.func
 };
 
 export default Menu;

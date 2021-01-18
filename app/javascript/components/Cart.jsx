@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import CartItem from "./CartItem";
-import axios from "axios";
+import { subtotal, submitOrder } from './helpers';
 
 class Cart extends React.Component {
   constructor(props) {
@@ -9,9 +9,6 @@ class Cart extends React.Component {
   }
 
   componentDidMount() {
-    // this.timer = setInterval(() => {
-    //   this.setState({items: {item: this.state.items.item + 1}});
-    // }, 1000);
   }
 
   componentWillUnmount() {}
@@ -21,6 +18,7 @@ class Cart extends React.Component {
       return (
         <CartItem
           id={item.id}
+          key={item.id}
           imageUrl={item.imageUrl}
           name={item.name}
           cart={this.props.cart}
@@ -32,24 +30,6 @@ class Cart extends React.Component {
         />
       );
     });
-    const submitOrder = async (cart) => {
-      try {
-        const simpleCart = cart.map((item) => {
-          return {
-            id: item.id,
-            price_cents: item.price_cents,
-            quantity: item.quantity,
-          };
-        });
-        console.log(simpleCart);
-        const sendOrder = await axios.post("/cart/fill", simpleCart);
-        if (sendOrder.data === "OK") {
-          window.location.href = `/cart`;
-        }
-      } catch (err) {
-        console.log("Errror: ", err.message);
-      }
-    };
     return (
       <>
         <h3>YOUR ORDER</h3>
@@ -66,6 +46,12 @@ class Cart extends React.Component {
                 </tr>
               </thead>
               <tbody>{items}</tbody>
+              <tfoot>
+                <tr>
+                  <td colSpan="4">TOTAL</td>
+                  <td>{subtotal(this.props.cart)}</td>
+                </tr>
+              </tfoot>
             </table>
             <button onClick={() => submitOrder(this.props.cart)}>
               Order Now
@@ -77,6 +63,13 @@ class Cart extends React.Component {
       </>
     );
   }
-}
+};
+
+Cart.propTypes = {
+  decrementItem: PropTypes.func,
+  incrementItem: PropTypes.func,
+  cart: PropTypes.array,
+  setCart: PropTypes.func
+};
 
 export default Cart;

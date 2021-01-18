@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Categories from "./Categories";
 import Menu from "./Menu";
 import Cart from "./Cart";
-import fillCart from '../helpers/fillCart';
+import { fillCart } from './helpers';
 
 const Base = (props) => {
   const [category, setCategory] = useState(0);
@@ -34,7 +34,6 @@ const Base = (props) => {
   const incrementItem = (id, name, price_cents, image_tiny_url) => {
     const itemInCart = cart.findIndex(item => item.id === id);
     if (itemInCart === -1) {
-      console.log('NEW');
       setCart([...cart, {
         id,
         name,
@@ -43,7 +42,6 @@ const Base = (props) => {
         quantity: 1
       }]);
     } else {
-      console.log('ALREADY THERE');
       setCart(prev => prev.map(prevItem => {
         if (prevItem.id === id) {
           return {
@@ -77,6 +75,12 @@ const Base = (props) => {
       </div>
     </>
   );
+};
+
+Base.propTypes = {
+  products: PropTypes.array,
+  categories: PropTypes.array,
+  current_cart: PropTypes.object
 };
 
 export default Base;

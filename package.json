@@ -1,6 +1,6 @@
 {
   "name": "yonago",
-  "version": "0.1",
+  "version": "0.2",
   "homepage": "https://github.com/sherwin-kwan/yonago",
   "license": "MPL-2.0",
   "devDependencies": {
@@ -12,7 +12,6 @@
     "@rails/webpacker": "5.2.1",
     "axios": "^0.21.1",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "bootstrap": "^4.5.3",
     "jquery": "^3.5.1",
     "normalize.css": "^8.0.1",
     "popper.js": "^1.16.1",
