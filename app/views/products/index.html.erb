@@ -11,6 +11,6 @@
     product["image_tiny_url"] = asset_pack_path("media#{product["image"]["tiny"]["url"]}")
     product
   end
-  react_component("Base", { categories: @categories, products: products_with_pack_urls })
+  react_component("Base", { categories: @categories, products: products_with_pack_urls, current_cart: JSON.parse(cookies[:cart]) })
    %>
 </section>

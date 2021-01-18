@@ -3,10 +3,11 @@ import PropTypes from "prop-types";
 import Categories from "./Categories";
 import Menu from "./Menu";
 import Cart from "./Cart";
+import fillCart from '../helpers/fillCart';
 
 const Base = (props) => {
   const [category, setCategory] = useState(0);
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(fillCart(props.current_cart, props.products));
 
   const decrementItem = (id) => {
     const itemInCart = cart.findIndex(item => item.id === id);
@@ -57,7 +58,6 @@ const Base = (props) => {
       ));
     }
   };
-
   return (
     <>
       <div className="menu-section">

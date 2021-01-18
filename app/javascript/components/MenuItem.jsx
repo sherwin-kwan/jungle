@@ -38,7 +38,7 @@ const MenuItem = (props) => {
       {data.description}
     </p>
     <footer className="actions">
-      <button onClick={() => props.incrementItem(data.id, data.name, data.price_cents, data.image_tiny_url)}>
+      <button disabled={data.quantity === 0 ? true : false} onClick={() => props.incrementItem(data.id, data.name, data.price_cents, data.image_tiny_url)}>
         <i className="fas fa-shopping-cart"></i>Order
       </button>
       <a href={detailsUrl}>Details &gt;&gt;</a>
