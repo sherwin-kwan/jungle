@@ -6,7 +6,6 @@ div.products {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
-  margin-left: 3rem;
 
   article {
     // flex:      1;
@@ -38,7 +37,7 @@ div.products {
       padding: 15px;
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px;
-      width: 100%;
+      width: 240px;
       transition: all 0.3s;
     }
 

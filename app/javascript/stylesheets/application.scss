@@ -24,7 +24,6 @@ body {
   }
 }
 
-
 // Top Nav
 nav {
   display: flex;
@@ -76,27 +75,36 @@ div.title-image {
 div.menu-section {
   display: flex;
   flex-direction: row;
+  margin-left: 3rem;
+  justify-content: space-between;
 
   h1 {
     text-align: center;
   }
 
-
-// Categories Sidebar
+  // Categories and Menu
+  main {
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-start;
+    width: 66%;
+  }
 
   .categories {
-    width: 25%;
     background-color: $brand-red;
 
     ul {
-      padding-left: 0;
+      list-style-type: none;
+      margin: 0;
+      padding: 0 1.5rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
 
       li {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 4rem;
-        font-size: 2rem;
+        font-size: 1.2rem;
+        padding: 1rem;
+        border-radius: 1rem 1rem 0 0;
 
         &.selected-category {
           background-color: $brand-blue;
@@ -106,10 +114,19 @@ div.menu-section {
   }
 
   .menu {
-    width: 75%;
+    margin: auto;
+  }
+  // Homepage - cart component
+  aside {
+    width: 30%;
+    background-color: $brand-yellow;
+    color: black;
+
+    button {
+      margin: 0.5rem;
+    }
   }
 }
-
 
 // See products.scss for everything in "div.products" or individual product pages
 
