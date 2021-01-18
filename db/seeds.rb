@@ -61,7 +61,7 @@ cat1.products.create!({
 cat2.products.create!({
   name: "Ebi",
   description: "Shrimp prepared by slicing it open and laying it out flat on top of the rice",
-  image: open_asset("03-ebi.jpg"),
+  image: open_asset("03-ebi.jpeg"),
   quantity: 24,
   price: 2.25
 })
