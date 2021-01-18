@@ -73,7 +73,7 @@ const Base = (props) => {
         </div>
       </div>
       <div className="cart-section">
-        <Cart cart={cart} setCart={setCart} decrementItem={decrementItem} incrementItem={incrementItem} />
+        {<Cart cart={cart} setCart={setCart} decrementItem={decrementItem} incrementItem={incrementItem} />}
       </div>
     </>
   );

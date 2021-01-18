@@ -16,7 +16,7 @@ const MenuItem = (props) => {
   // };
 
   const soldOut = (
-  <aside class="sold-out" title="Sorry, sold out for the day">
+  <aside className="sold-out" title="Sorry, sold out for the day">
     SOLD OUT
   </aside>);
 
@@ -37,9 +37,9 @@ const MenuItem = (props) => {
     <p className="description">
       {data.description}
     </p>
-    <footer class="actions">
+    <footer className="actions">
       <button onClick={() => props.incrementItem(data.id, data.name, data.price_cents, data.image_tiny_url)}>
-        <i class="fas fa-shopping-cart"></i>Order
+        <i className="fas fa-shopping-cart"></i>Order
       </button>
       <a href={detailsUrl}>Details &gt;&gt;</a>
     </footer>
