@@ -59,6 +59,14 @@ cat1.products.create!({
 })
 
 cat2.products.create!({
+  name: "Ebi",
+  description: "Shrimp prepared by slicing it open and laying it out flat on top of the rice",
+  image: open_asset("03-ebi.jpg"),
+  quantity: 4,
+  price: 2.25
+})
+
+cat2.products.create!({
   name: "Tai",
   description: "The red bream or red snapper, a fish native to the waters of the Pacific off East Asia",
   image: open_asset("04-tai.jpg"),

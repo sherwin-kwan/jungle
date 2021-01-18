@@ -185,8 +185,8 @@ button, input[type="submit"] {
   }
 
   &:disabled {
-    background-color: gray;
-    opacity: 50%;
+    background-color: grey;
+    opacity: 0.5;
   }
 
   &.cancel, &.decrement {
