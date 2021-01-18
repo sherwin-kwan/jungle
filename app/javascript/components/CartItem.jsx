@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 const CartItem = (props) => {
   return (
     <tr>
-      <td>
+      {/* <td>
         <img src={props.imageUrl} alt={`Small image of ${props.name}`} />
-      </td>
+      </td> */}
       <td>
         <h4>{props.name}</h4>
       </td>

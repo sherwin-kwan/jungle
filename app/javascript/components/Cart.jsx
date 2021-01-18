@@ -39,7 +39,7 @@ class Cart extends React.Component {
             <table>
               <thead>
                 <tr>
-                  <th colSpan="2">Dish</th>
+                  <th>Dish</th>
                   <th>Unit price</th>
                   <th>Quantity</th>
                   <th>Total price</th>
@@ -48,7 +48,7 @@ class Cart extends React.Component {
               <tbody>{items}</tbody>
               <tfoot>
                 <tr>
-                  <td colSpan="4">TOTAL</td>
+                  <td colSpan="3">TOTAL</td>
                   <td>{subtotal(this.props.cart)}</td>
                 </tr>
               </tfoot>
