@@ -22,7 +22,6 @@ class UsersController < ApplicationController
       email: params[:email],
       is_guest: true,
     })
-    binding.pry
     @user.save
     session[:current_user] = @user.id
     redirect_back(fallback_location: cart_path)
