@@ -46,7 +46,7 @@ cat1.products.create!({
   name: "California Rolls",
   description: "8 per order. Inside-out sushi roll with avocado and imitation crab",
   image: open_asset("01-california-roll.jpg"),
-  quantity: 20,
+  quantity: 50,
   price: 5.99,
 })
 
@@ -54,7 +54,7 @@ cat1.products.create!({
   name: "Red Dragon Rolls",
   description: "8 per order. Specialty shrimp tempura roll with spicy tuna or salmon overlay",
   image: open_asset("02-red-dragon-roll.jpg"),
-  quantity: 18,
+  quantity: 28,
   price: 8.99,
 })
 
@@ -62,7 +62,7 @@ cat2.products.create!({
   name: "Ebi",
   description: "Shrimp prepared by slicing it open and laying it out flat on top of the rice",
   image: open_asset("03-ebi.jpg"),
-  quantity: 4,
+  quantity: 24,
   price: 2.25
 })
 
@@ -70,7 +70,7 @@ cat2.products.create!({
   name: "Tai",
   description: "The red bream or red snapper, a fish native to the waters of the Pacific off East Asia",
   image: open_asset("04-tai.jpg"),
-  quantity: 8,
+  quantity: 38,
   price: 2.50,
 })
 
@@ -78,7 +78,7 @@ cat3.products.create!({
   name: "Salmon Sashimi",
   description: "Comes in a set of 3. Fresh off the boat.",
   image: open_asset("05-salmon-sashimi.jpg"),
-  quantity: 8,
+  quantity: 18,
   price: 5.49,
 })
 
