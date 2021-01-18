@@ -34,7 +34,6 @@ const Base = (props) => {
   const incrementItem = (id, name, price_cents, image_tiny_url) => {
     const itemInCart = cart.findIndex(item => item.id === id);
     if (itemInCart === -1) {
-      console.log('NEW');
       setCart([...cart, {
         id,
         name,
@@ -43,7 +42,6 @@ const Base = (props) => {
         quantity: 1
       }]);
     } else {
-      console.log('ALREADY THERE');
       setCart(prev => prev.map(prevItem => {
         if (prevItem.id === id) {
           return {

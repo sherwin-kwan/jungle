@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import CartItem from "./CartItem";
-import axios from "axios";
-import { formattedPrice } from './helpers';
+import { subtotal, submitOrder } from './helpers';
 
 class Cart extends React.Component {
   constructor(props) {
@@ -31,27 +30,6 @@ class Cart extends React.Component {
         />
       );
     });
-    const subtotal = formattedPrice(this.props.cart.reduce((acc, item) => {
-      return acc + item.price_cents * item.quantity;
-    }, 0));
-    const submitOrder = async (cart) => {
-      try {
-        const simpleCart = cart.map((item) => {
-          return {
-            id: item.id,
-            price_cents: item.price_cents,
-            quantity: item.quantity,
-          };
-        });
-        console.log(simpleCart);
-        const sendOrder = await axios.post("/cart/fill", simpleCart);
-        if (sendOrder.data === "OK") {
-          window.location.href = `/cart`;
-        }
-      } catch (err) {
-        console.log("Errror: ", err.message);
-      }
-    };
     return (
       <>
         <h3>YOUR ORDER</h3>
@@ -71,7 +49,7 @@ class Cart extends React.Component {
               <tfoot>
                 <tr>
                   <td colSpan="4">TOTAL</td>
-                  <td>{subtotal}</td>
+                  <td>{subtotal(this.props.cart)}</td>
                 </tr>
               </tfoot>
             </table>
