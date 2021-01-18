@@ -61,6 +61,7 @@
         To place your order, please enter your email above so we know how to contact you!
       </div>
     <% end %>
+    <%= button_to "Cancel Order", empty_cart_path %>
   <% else %>
     <div class="bottom-link error">
       There are no items in your order. Start by <%= link_to "browsing our menu", root_path %>

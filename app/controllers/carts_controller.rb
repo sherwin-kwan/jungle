@@ -10,12 +10,17 @@ class CartsController < ApplicationController
 
   # Items in the format [{id: 1, quantity: 2}, {id: 2, quantity: 3}] meaning "2 orders of item ID 1 and 3 orders of item ID 2"
   def fill
-    cart = {}
+    update_cart({})
     params[:_json].each do |item|
       cart[item[:id]] = item[:quantity]
     end
     update_cart cart
     render plain: "OK"
+  end
+
+  def empty
+    update_cart({})
+    redirect_back(fallback_location: root_path)
   end
 
   def add_item

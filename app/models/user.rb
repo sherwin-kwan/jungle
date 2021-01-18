@@ -8,8 +8,9 @@ class User < ApplicationRecord
   before_create :lowercase_email
   before_validation :lowercase_email
   validates :name, presence: true, unless: :is_guest
-  validates :email, presence: true, uniqueness: true,
+  validates :email, presence: true, 
                     format: { with: URI::MailTo::EMAIL_REGEXP, message: "Must be a valid email format" }
+  validates :email, uniqueness: true, unless: :is_guest
   validates :password, length: { minimum: 5 }, unless: :is_guest
   validates_confirmation_of :password, unless: :is_guest
   validates :password, presence: false, if: :is_guest
