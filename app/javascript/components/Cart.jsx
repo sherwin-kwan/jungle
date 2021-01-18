@@ -84,6 +84,13 @@ class Cart extends React.Component {
       </>
     );
   }
-}
+};
+
+Cart.propTypes = {
+  decrementItem: PropTypes.func,
+  incrementItem: PropTypes.func,
+  cart: PropTypes.array,
+  setCart: PropTypes.func
+};
 
 export default Cart;

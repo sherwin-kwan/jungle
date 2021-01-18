@@ -33,4 +33,10 @@ class Categories extends React.Component {
   }
 }
 
+Categories.propTypes = {
+  data: PropTypes.array,
+  category: PropTypes.number,
+  setCategory: PropTypes.func
+};
+
 export default Categories;

@@ -23,4 +23,10 @@ const Menu = (props) => {
   );
 };
 
+Menu.propTypes = {
+  data: PropTypes.array,
+  category: PropTypes.number,
+  incrementItem: PropTypes.func
+};
+
 export default Menu;
