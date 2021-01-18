@@ -47,7 +47,7 @@ cat1.products.create!({
   description: "8 per order. Inside-out sushi roll with avocado and imitation crab",
   image: open_asset("01-california-roll.jpg"),
   quantity: 50,
-  price: 5.99,
+  price: 5.99
 })
 
 cat1.products.create!({
@@ -55,7 +55,7 @@ cat1.products.create!({
   description: "8 per order. Specialty shrimp tempura roll with spicy tuna or salmon overlay",
   image: open_asset("02-red-dragon-roll.jpg"),
   quantity: 28,
-  price: 8.99,
+  price: 8.99
 })
 
 cat2.products.create!({
@@ -71,7 +71,7 @@ cat2.products.create!({
   description: "The red bream or red snapper, a fish native to the waters of the Pacific off East Asia",
   image: open_asset("04-tai.jpg"),
   quantity: 38,
-  price: 2.50,
+  price: 2.50
 })
 
 cat3.products.create!({
@@ -79,7 +79,7 @@ cat3.products.create!({
   description: "Comes in a set of 3. Fresh off the boat.",
   image: open_asset("05-salmon-sashimi.jpg"),
   quantity: 18,
-  price: 5.49,
+  price: 5.49
 })
 
 cat4.products.create!({
@@ -87,7 +87,7 @@ cat4.products.create!({
   description: "Octopus balls, 10 per serving",
   image: open_asset("06-takoyaki.jpg"),
   quantity: 82,
-  price: 9.99,
+  price: 9.99
 })
 
 cat5.products.create!({
@@ -95,7 +95,7 @@ cat5.products.create!({
   description: "A great way to unwind after stuffing yourself!",
   image: open_asset("07-green-tea.png"),
   quantity: 0,
-  price: 2.99,
+  price: 2.99
 })
 
 puts "DONE!"
