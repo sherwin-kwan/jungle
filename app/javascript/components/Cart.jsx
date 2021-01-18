@@ -53,7 +53,7 @@ class Cart extends React.Component {
                 </tr>
               </tfoot>
             </table>
-            <button onClick={() => submitOrder(this.props.cart)}>
+            <button className="convert-button" onClick={() => submitOrder(this.props.cart)}>
               Order Now
             </button>
           </>

@@ -124,7 +124,14 @@ div.menu-section {
 
     button {
       margin: 0.25rem;
-      font-size: 0.6rem;
+      font-size: 1rem;
+      padding: 0.25rem;
+
+      &.convert-button {
+        font-size: 1.5rem;
+        padding: 0.8rem;
+        font-weight: bold;
+      }
     }
   }
 }
@@ -161,4 +168,16 @@ footer {
 // To leave space around buttons and links at bottom of a page
 div.bottom-link {
   padding: 2rem;
+}
+
+// Standard buttons
+button {
+  background-color: $brand-green;
+  color: white;
+  padding: 0.8rem;
+
+  &:disabled {
+    background-color: gray;
+    opacity: 50%;
+  }
 }
