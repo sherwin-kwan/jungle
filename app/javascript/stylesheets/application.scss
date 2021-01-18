@@ -171,13 +171,26 @@ div.bottom-link {
 }
 
 // Standard buttons
-button {
+button, input[type="submit"] {
   background-color: $brand-green;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
   color: white;
+  font-weight: bold;
   padding: 0.8rem;
 
   &:disabled {
     background-color: gray;
     opacity: 50%;
   }
+
+  &.cancel, &.decrement {
+    background-color: $brand-red;
+  }
+}
+
+button.stripe-button-el span {
+  font-size: 1rem;
+  padding: 0.8rem;
 }
