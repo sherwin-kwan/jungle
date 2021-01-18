@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const fillCart = (cart, products) => {
   const filledCart = [];
-  Object.keys(cart).forEach((key) => {
+  if (cart) Object.keys(cart).forEach((key) => {
     const myProduct = products.find((product) => product.id == key);
     if (myProduct) {
       filledCart.push({
