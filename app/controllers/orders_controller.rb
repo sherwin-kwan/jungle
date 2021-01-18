@@ -17,6 +17,12 @@ class OrdersController < ApplicationController
     order = create_order(charge)
 
     if order.valid?
+      cart.keys.each do |key|
+        binding.pry
+        purchased_product = Product.find(key.to_i)
+        purchased_product.quantity -= cart[key]
+        purchased_product.save
+      end
       empty_cart!
       redirect_to order, notice: "Your Order has been placed."
     else
