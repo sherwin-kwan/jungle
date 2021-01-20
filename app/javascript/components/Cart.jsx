@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import CartItem from "./CartItem";
-import { cancelOrder, subtotal, submitOrder } from "./helpers";
+import { saveOrder, subtotal, submitOrder } from "./helpers";
 
 class Cart extends React.Component {
   constructor(props) {
@@ -10,7 +10,10 @@ class Cart extends React.Component {
 
   componentDidMount() {}
 
-  componentWillUnmount() {}
+  componentWillUnmount() {
+    console.log('Unmounting!');
+    saveOrder(cart);
+  }
 
   render() {
     const items = this.props.cart.map((item) => {
@@ -58,10 +61,7 @@ class Cart extends React.Component {
             >
               Order Now
             </button>
-            <button className="cancel" onClick={() => {
-               this.props.setCart([]);
-               cancelOrder();
-            }}>
+            <button className="cancel" onClick={() => this.props.setCart([])}>
               Cancel Order
             </button>
           </>

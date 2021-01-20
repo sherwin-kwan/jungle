@@ -1,16 +1,5 @@
 import axios from "axios";
 
-export const cancelOrder = async () => {
-  try {
-    const sendOrder = await axios.post("/cart/fill", []);
-    if (!sendOrder.data === "OK") {
-      throw new Error("Cart didn't empty");
-    }
-  } catch (err) {
-    console.log("Errror: ", err.message);
-  }
-};
-
 export const fillCart = (cart, products) => {
   const filledCart = [];
   if (Object.keys(cart)) Object.keys(cart).forEach((key) => {
@@ -41,6 +30,18 @@ export const formattedPrice = function (price_cents) {
     return `$0.${cents}`;
   } else {
     return `$0.0${cents}`;
+  }
+};
+
+// Just saves the state of an order when user navigates away from React-enabled page
+export const saveOrder = async (cart) => {
+  try {
+    const sendOrder = await axios.post("/cart/fill", cart);
+    if (!sendOrder.data === "OK") {
+      throw new Error("Cart didn't save");
+    }
+  } catch (err) {
+    console.log("Errror: ", err.message);
   }
 };
 
