@@ -18,7 +18,6 @@ class OrdersController < ApplicationController
 
     if order.valid?
       cart.keys.each do |key|
-        binding.pry
         purchased_product = Product.find(key.to_i)
         purchased_product.quantity -= cart[key]
         purchased_product.save
