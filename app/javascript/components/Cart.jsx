@@ -58,7 +58,7 @@ class Cart extends React.Component {
             >
               Order Now
             </button>
-            <button className="cancel" onClick={() => this.props.setCart({})}>
+            <button className="cancel" onClick={() => this.props.setCart([])}>
               Cancel Order
             </button>
           </>

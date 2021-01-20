@@ -11,6 +11,7 @@ const Base = (props) => {
     fillCart(props.current_cart, props.products)
   );
 
+  console.log('Cart is set to: ', cart);
   const decrementItem = (id) => {
     const itemInCart = cart.findIndex((item) => item.id === id);
     if (itemInCart === -1) {

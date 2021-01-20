@@ -12,6 +12,7 @@
 
 # Ignore carrier wave uploads for development
 /public/uploads
+/public/archive
 # /app/javascript/images/uploads
 
 # Ignore db creds / settings
