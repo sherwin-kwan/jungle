@@ -1,5 +1,16 @@
 import axios from "axios";
 
+export const cancelOrder = async () => {
+  try {
+    const sendOrder = await axios.post("/cart/fill", []);
+    if (!sendOrder.data === "OK") {
+      throw new Error("Cart didn't empty");
+    }
+  } catch (err) {
+    console.log("Errror: ", err.message);
+  }
+};
+
 export const fillCart = (cart, products) => {
   const filledCart = [];
   if (Object.keys(cart)) Object.keys(cart).forEach((key) => {

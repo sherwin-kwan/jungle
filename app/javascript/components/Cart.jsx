@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import CartItem from "./CartItem";
-import { subtotal, submitOrder } from "./helpers";
+import { cancelOrder, subtotal, submitOrder } from "./helpers";
 
 class Cart extends React.Component {
   constructor(props) {
@@ -58,7 +58,10 @@ class Cart extends React.Component {
             >
               Order Now
             </button>
-            <button className="cancel" onClick={() => this.props.setCart([])}>
+            <button className="cancel" onClick={() => {
+               this.props.setCart([]);
+               cancelOrder();
+            }}>
               Cancel Order
             </button>
           </>
